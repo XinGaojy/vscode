@@ -1,0 +1,6 @@
+/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/CMakeFiles/file_proto.dir
+/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/CMakeFiles/dfs_lib.dir
+/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/CMakeFiles/dfs-server.dir
+/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/CMakeFiles/dfs-client.dir
+/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/CMakeFiles/edit_cache.dir
+/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/CMakeFiles/rebuild_cache.dir

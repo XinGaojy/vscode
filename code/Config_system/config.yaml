@@ -1,0 +1,7 @@
+log:
+  level: "debug"
+  file: "/tmp/debug.log"
+
+network:
+  threads: 8
+  ports: [80, 443]

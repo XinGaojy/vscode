@@ -1,0 +1,13 @@
+# ninja log v5
+86	720	1757333085377979814	CMakeFiles/dfs_lib.dir/src/protocol/codec.cc.o	7f15f0e79a03e70c
+2	285	1757333084942983420	CMakeFiles/dfs_lib.dir/src/network/tcp_server.cc.o	86f193af5ef0d6d5
+3	210	1757333084867984042	CMakeFiles/dfs_lib.dir/src/network/tcp_client.cc.o	144116886d145730
+7	239	1757333347029816160	CMakeFiles/dfs_lib.dir/src/security/crypto.cc.o	91253e3d65c68d63
+12	2905	1757332883191655684	CMakeFiles/file_proto.dir/generated/file.grpc.pb.cc.o	c91c7000b5637079
+12	1151	1757332881438670215	CMakeFiles/file_proto.dir/generated/file.pb.cc.o	741f383bec857762
+12	167	1757332880454678371	CMakeFiles/dfs_lib.dir/src/common/logger.cc.o	7721366584acc481
+2	12	1757332880299679655	/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/generated/file.grpc.pb.cc	28f01fe30f327416
+2	12	1757332880299679655	/workspace/clang-quickstart/code/distrubute_file_system/distributedfilesystemcpp11/build/generated/file.pb.cc	28f01fe30f327416
+2	86	1757333084741985086	libfile_proto.a	b9711f676afc2bde
+2	12	1757332880299679655	generated/file.grpc.pb.cc	28f01fe30f327416
+2	12	1757332880299679655	generated/file.pb.cc	28f01fe30f327416
