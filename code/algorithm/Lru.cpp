@@ -88,7 +88,7 @@ int main(){
 #endif
 
 
-
+#if 0
 #include<iostream>
 class LruCache{
 private:
@@ -151,6 +151,10 @@ public:
     }
 
 }
+
+#endif
+
+
 
 
 
@@ -222,5 +226,10 @@ public:
 //     }
 
 // };
+
+
+
+
+
 
 

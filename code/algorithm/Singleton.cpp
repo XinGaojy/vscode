@@ -603,7 +603,7 @@ int main(){
 //unique_ptr<FILE,decltype(&fclose)> fp(fopen("file","r"), &fclose);
 //
 
-
+#if 0
 #include <iostream>
 #include <cstdio>
 
@@ -644,6 +644,200 @@ int main() {
 
     return 0;
 }
+
+
+#endif
+
+
+
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+template<class T,int N>
+class Lockfreedeque{
+private:
+    struct element{
+        T *data_;
+        atomic<bool> full_;
+    };
+    vector<element>vec;
+    atomic<size_t>read_index_;
+    atomic<size_t>write_index_;
+    condition_variable condition;
+public:
+    Lockfreedeque(int N){
+        read_index.store(0,std::memory_ordered_relaxed);
+        write_index_.store(0,std::memory_ordered_relaxed);
+        for(auto i:vec){
+            i.full_.store(false,std::memory_ordered_relaxed);
+        }
+    }
+    bool enqueue( T *x){
+       // size_t temp=write_index_.load(std::memory_order_acuire);
+        element e;
+
+        do {
+
+            size_t temp=write_index_.load(std::memory_order_acuire);
+            if(read_index_.load(std::memory_ordered_acquire) + vec.size()>write_index)
+            {
+                return false;
+            }
+
+            size_t index=temp% vec.size();
+            e=vec[index];
+            if(e.full_.load(std::memory_order_relaxed){
+                return false;
+            }
+
+        }while(!write_index_.compare_exchange_weak(
+                    write_index_,
+                    write_index_+1,
+                    std::memory_release,
+                    std::memory_ordered_relaxed);
+
+            vec[index].data_=std::move(x);
+            vec[index].full_.store(true,std::memory_ordered_release);
+            write_index_.store(temp+1,std::memory_ordered_release);
+            return true;
+    }
+
+    bool dequeue(T & x){
+        element e;
+        do {
+            size_t temp=read_index_.load(std::memory_ordered_acquire);
+            if(temp>write_index_.load(sd::memory_acquire){
+                    return false;
+            }
+            
+            e=std::move(vec[temp]);
+            if(!e.full_.load(std::memory_ordered_relaxed){
+                return false;
+            }
+            
+            
+
+
+        }while(!read_idnex_.compare_exchange_weak(temp,
+                    temp+1,
+                    std::memory_order_relaxed,
+                    std::memory_ordered_release);
+
+            x=std::move(e.data);
+            e.full_.store(false,std::memory_ordered_release);
+            return true;
+    }
+};
+
+int main(){
+
+    return 0;
+}
+
+
+
+
+
+
+
+#endif
+
+
+
+
+
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+class Singletion{
+private:
+    mutex mtx;
+    Singletion()=default;
+    Singletion(const Singletion & )=delete;
+    Singletion(Singletion&& )=delete;
+    Singletion& operator=(const Singletion& )=delete;
+    Singletion& operator=(const Singletion&& )=delete;
+    static Singletion& getinstance(){
+        static Singletion instance;
+        return instance;
+    }
+
+public:
+    void print(){
+        cout<< this<<endl;
+    }
+};
+
+
+#endif
+
+#include<iostream>
+#include<mutex>
+#include<atomic>
+#include<unistd.h>
+#include<memory>
+using namespace std;
+
+
+class Singletion{
+private:
+    atomic<Singletion*>instance;
+    mutex mtx;
+   static  void distructor(){
+        if(instance){
+            delete instance;
+            instance==nullptr;
+
+        }
+        
+    }
+    ~Singletion()=delete;
+    Singletion()=default;
+    Singletion(const Singletion& )=delete;
+    Singletion&  operator=(const Singletion& )=delete;
+    Singletion(const Singletion&& )=delete;
+    Singletion& operator=(Singletion&& )=delete;
+
+public:    
+    void print(){
+        cout<<this<<endl;
+    }
+    static Singletion* getinstance(){
+        Singletion* temp=instance.load(std::memory_order_acquire);
+        if(temp==nullptr){
+            lock_guard<mutex>lock(mtx);
+            temp=instance.load(memory_order_relaxed);
+            if(temp==nullptr){
+                temp=new Singletion();
+                instance.store(temp,std::memory_order_release);
+                atexit(distructor);
+            }
+        }
+        return temp;
+    }
+
+};
+
+ static atomic<Singletion*>Singletion::instance;
+static  mutex Singletion::mtx;
+
+int main(){
+#if 0
+    getinstance.print();
+#endif
+
+    Singletion::getinstance()->print();
+    return 0;
+}
+
+
+
 
 
 

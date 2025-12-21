@@ -117,9 +117,6 @@ void test_shared_ptr_thread_safety() {
 
 int main() {
 
-
-
-
     int *p=new int(1);
     shared_ptr<int> ptr1(new int(10));
     cout<<ptr1.get_count();
@@ -132,9 +129,6 @@ int main() {
     return 0;
 }
 #endif
-
-
-
 
 
 
@@ -279,6 +273,473 @@ int main(){
 }
 #endif
 
+
+#if 0
+
+#include<iostream>
+using namespace std;
+template<class T>
+class Mysharedptr{
+private:
+    T *ptr;
+    std::atomic<size_t>*ref_count;
+    release(){
+        if(ref_count && ref_count->fetch_sub(1,std::memory_order_acq_rel)==1){
+            delete ptr;;
+            delete ref_count;
+        }
+    }
+
+public:
+    Mysharedptr():ptr(nullptr),ref_count(nullptr){}
+    
+    Mysharedptr(T *p):ptr(p),ref_count(p ? new std::atomic<size_t>(1):nullptr){}
+    
+    Mysharedptr(const Mysharedptr<T>& other){
+        ptr=other.ptr;
+        ref_count=other.ref_count;
+        if(ref_count){
+            ref_count->fetch_add(1,std::memory_order_relaxed);
+        }
+    }
+
+    Mysharedptr(Mysharedptr<T> && other) noexcept{
+        ptr=other.ptr;
+        ref_count=other.ref_count;
+        other.ptr=nullptr;
+        other.ref_count=nullptr;
+
+    }
+    Mysharedptr& operator=(const Mysharedptr<T> &other){
+        if(other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            if(ref_count){
+                ref_count.fetch_add(1,std::memory_order_relaxed);
+            }
+            return *this;
+        }
+        
+    Mysharedptr&  operator=(Mysharedptr<T> && other){
+        if(other!=this){
+            release();
+            ptr=other.ptr;;
+            ref_count=other.ref_count;
+            other.ptr=nullptr;
+            other.ref_count=nullptr;
+
+        }
+        return *this;
+    }
+
+    } 
+};
+int main(){
+    
+    return 0;
+}
+
+#endif
+
+
+
+#if 0
+template<class T>
+class Mysharedptr{
+private:
+   T *ptr;
+   std::atomic<T> *ref_count;
+   release(){
+        if(ref_count && ref_count->fetch_sub(1,std::memory_order_acq_rel)==1){
+            delete ptr;
+            delete ref_count;
+        }
+   }
+
+   explicit Mysharedptr(const T *p):ptr(p),ref_count(p? new std::atomic<T>(1):nullptr){
+        
+
+   }
+
+   Mysharedptr(const Mysharedptr<T> & other){
+        ref_count=other.ref_count;
+        ptr=other.ptr;
+        if(ref_count){
+            ref_count.fetch_add(1,std::memory_order_relaxed);
+        }
+   }
+
+   Mysharedptr& operator=(const Mysharedptr<T> &other){
+        if(other!=this){
+            release();
+            ref_count=other.ref_count;
+            ptr=other.ptr;
+            if(ref_count){
+                ref_count.fetch_add(1,std::memory_order_relaxed);
+            }
+        }
+        return *this;
+   }
+
+   Mysharedptr& operator=(Mysharedptr<T> &&other){
+        if(other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            other.ptr=nullptr;
+            other.ref_count=nullptr;
+
+        }
+        return *this;
+   }
+
+   Mysharedptr(Mysharedptr<T> &&other)noexcept{
+        ptr=other.ptr;
+        ref_count=other.ref_count;
+        other.ptr=nullptr;
+        other.ref_count=nullptr;
+
+   }
+
+
+   int get_count(){
+        return ref_count;
+   }
+
+
+public:
+    
+};
+
+
+#endif
+
+
+
+
+
+
+
+
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+template <class T>
+class Mysharedptr{
+private:
+    T *ptr;
+    std::atomic<T>* ref_count;
+    release(){
+        if(ref_count && ref_count.fetch_sub(1,std::memory_order_acq_rel)==1){
+            delete ptr;
+            delete ref_count;
+        }
+    }
+public:
+    
+    Mysharedptr():ptr(nullptr),ref_count(nullptr){}
+
+    explicit Mysharedptr(const T *p):ptr(p),ref_count(p? new std::atomic<size_t>(1):nullptr){}
+
+    Mysharedptr(Mysharedptr<T> &other){
+        ptr=other.ptr;
+        ref_count=other.ref_count;
+        if(ref_count){
+            ref_count.fetch_add(1,std::memory_order_relaxed);
+        }
+    }
+
+    Mysharedptr(Mysharedptr<T> &&other)noexcept{
+        ptr=other.ptr;
+        ref_count=other.ref_count;
+        other.ptr=nullptr;
+        other.ref_count=nullptr;
+
+    }
+    Mysharedptr& operator=(const Mysharedptr<T> &other){
+        if(&other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            other.ptr=nullptr;
+            other.ref_count=nullptr;
+
+        }
+        return *this;
+    }
+    
+    Mysharedptr& operator=(Mysharedptr<T> &&other)noexcept{
+        if(&other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            if(ref_count){
+                ref_count.fetch_ajd(1,std::memory_order_relaxed);
+            }
+        }
+        return *this;
+    }
+
+    int get_count()const {
+        return *ref_count;
+    }
+
+};
+int main(){
+
+    return 0;
+}
+
+#endif
+
+
+
+
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+template <class T>
+class Mysharedptr{
+private:
+    T ptr;
+    std::atomic<T>*ref_count;
+    void release(){
+        if(ref_count && ref_count.fetch_sub(1,std::memory_order_acq_rel)==1){
+            delete ptr;
+            delete ref_count;
+        }
+    }
+public:
+    Mysharedptr():ref_connt(nullptr),ptr(nullptr){}
+
+    explicit Mysharedptr(const T *p):ptr(p),ref_count(p ? new std::atomic<T>(1) :nullptr){}
+
+    Mysharedptr(Mysharedptr<T> &other){
+        ptr=other.ptr;
+        ref_count=other.ref_count;
+        if(ref_count){
+            ref_count.fetch_add(1,std::memory_order_relaxed);
+        }
+    }
+
+    Mysharedptr(Mysharedptr<T>&& other)noexcept{
+        ptr=other.ptr;
+        ref_count=other.ptr;
+        ohter.ptr=nullptr;
+        other.ref_connt=nullptr;
+    }
+
+    Mysharedptr& operator=(const Mysharedptr<T> &other){
+        if(&other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            if(ref_count){
+                ref_count.fetch_add(1,std::memory_order_relaxed);
+            }
+        }
+        return *this;
+    }
+
+    Mysharedptr& operator=(Mysharedptr<T> &&other){
+        if(&other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            other.ptr=nullptr;
+            other.ref_count=nullptr;
+
+        }
+        return *this;
+    }
+    
+    int get_count()const {
+         retun *ref_count;
+    }
+
+    void reset(T *p=nullptr){
+        release();
+        ptr=p;
+        ref_count= p? new std::atomic<size_t>(1):nullptr;
+        
+    }
+
+    T *get()const {
+        return ptr;
+    }
+};
+
+
+int main(){
+
+    return 0;
+}
+
+#endif
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+class Mysharedptr{
+private:
+
+    T *ptr;
+    std::atomic<size_t>ref_count;
+    void release(){
+        if(ref_count && ref_count.fetch_fetch(1,std::memory_order_relaxed)==1){
+            delete ptr;
+            delete ref_count;
+        }
+    }
+
+    Mysharedptr():ptr(nullptr),ref_count(nullptr){}
+
+    explicit Mysharedptr(const T *p):ptr(p),ref_count(p? new std::atomic<size_t>(1):nullptr){}
+
+    Mysharedptr(const Mysharedptr<T>& other){
+        ptr=other.ptr;
+        ref_count=other.ref_connt;
+        if(ref_count){
+            ref_count.fetch_add(1,std::memory_order_relaxed);
+        }
+    }
+
+    Mysharedptr& operator=(const Mysharedptr<T>& other){
+       if(&other!=this){
+             release();
+             ptr=other.ptr;
+             ref_count=other.ref_count;
+            if(ref_count){
+                ref_count.fetch_add(1,std::memory_order_relaxed);
+            }
+       } 
+       return *this;
+    }
+
+    Mysharedptr(Mysharedptr<T>&& other)noexcept{
+        ptr=other.ptr;
+        ref_count=other.ref_connt;
+        other.ptr=nullptr;
+        other.ref_count=nullptr;
+    }
+
+    Mysharedptr& operator=(Mysharedptr<T> &&other){
+        if(&other!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            other.ptr=nullptr;
+            other.ref_count=nullptr;
+        }
+        return *this;
+    }
+public:
+
+    void reset(T *P=nullptr){
+        release();
+        ptr=p;
+        ref_count=p? new std::atomic<size_t>(1):nullptr;
+        
+    }
+
+    int get_count()const {
+        return *ref_count;
+    }
+
+    T *get()const  {
+        return ptr;
+    }
+};
+int main(){
+
+    return 0;
+}
+
+
+
+#endif
+
+
+
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+
+class Mysharedptr{
+private:
+    atomic<size_t>ref_count;
+    T *ptr;
+    void release(){
+        if(ptr && ref_count.fetch_sub(1,std::memory_order_acq_rel)==1){
+            delete ptr;
+            delete ref_count;
+            ptr=nullptr;
+            ref_count=nullptr;
+        }
+    }
+public:
+    Mysharedptr():ptr(nullptr),ref_count(nullptr){}
+
+    Mysharedptr(const T *p):ptr(p),ref_count.fetch_add(1,std::memory_order_relaxed){}
+
+    Mysharedptr(const Mysharedptr& other){
+        ptr=other.ptr;
+        ref_count=other.ptr;
+        if(ref_count){
+            ref_count.fetch_add(1,std::memory_order_relaxed);
+        }
+    }
+
+    Mysharedptr(Mysharedptr&& other){
+        ptr=other.ptr;
+        ref_connt=other.ref_connt;
+        other.ptr=nullptr;
+        other.ref_count=nullptr;
+    }
+
+
+    Mysharedptr& operator=(const Mysharedptr& other){
+        if(&other!=this){
+            release();
+            ptr=other.ptr;
+            ref_connt=other.ref_connt;
+            if(ref_count){
+                ref_connt.fetch_add(1,std::memory_order_relaxed);
+            }
+        }
+        return *this;
+    }
+
+
+    Mysharedptr& operator=(Mysharedptr&& other){
+        if(&ohter!=this){
+            release();
+            ptr=other.ptr;
+            ref_count=other.ref_count;
+            other.ptr=nullptr;
+            other.ref_connt=nullptr;
+        }
+        return *this;
+    }
+};
+int main(){
+    return 0;
+}
+
+
+#endif
 
 
 

@@ -11,7 +11,9 @@ public:
 		heap.resize(n+1);
 	}
 	void push(int x){
+		// 将新元素x插入到堆的末尾，并将index加1
 		heap[++index]=x;
+		// 调用up函数，调整堆的结构，确保堆的性质
 		up(index);
 	}
 	void pop(){
@@ -61,7 +63,7 @@ int main(){
 #endif 
 
 
-
+//new
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -103,25 +105,136 @@ public:
 		down(1);
 	
 	}
+
 	int size(){
 		return index;
 
 	}
+
 	int top(){
 		return heap[1];
 	}
+
 };
 
 int main(){
+
+#if 0
 	Heap hp = Heap(10);
 	vector<int>vec = {1,2,3,4,5,6,4,6,8};
 	for(auto& i:vec){
 		hp.push(i);
-		if(hp.size() > 8){
+		if(hp.size() > 6){
 			hp.pop();
 		}
 	}
-	cout<< hp.top();
+
+#endif
+
+
+#if 1
+	Heap hp=Heap(4);
+	vector<int>vec = {1,2,3,4,5,6,4,6,8};
+	for(auto i:vec){
+		if(hp.size()<4){
+			hp.push(i);
+		}else if(i>hp.top()){
+			hp.pop();
+			hp.push(i);
+		}
+	}
+
+#endif
+
+
+
+	vector<int>res;
+	while(hp.size()){
+		res.push_back(hp.top());
+		hp.pop();
+	}
+		
+	for(auto i:res){
+		cout << i <<endl;
+	}
+
 
 return 0;
 }
+
+
+
+
+
+
+
+#if 0
+#include<iostream>
+using namespace std;
+class Heap{
+private:
+	int index;
+	int capacity;
+	vector<int>heap;
+	void up(int u){
+		if(u/2 && heap[u/2]>heap[u]){
+			swap(heap[u/2],heap[u]);
+			up(u/2);
+		}
+
+		
+	}
+
+	void down(int u){
+		int v=u;
+		if(u*2<=index && heap[u*2]<heap[u])v=u*2;
+		if(u*2+1<=index && heap[u*2+1]<heap[u])v=u*2+1;
+		if(u!=v)
+		{
+			swap(heap[u],heap[v]);
+			down(v);
+		}
+		
+	}
+public:
+	Heap(int n){
+		capacity=n;
+		index=0;
+		heap.resize(n+1);
+	}
+	void push(int val){
+		heap[++index]=val;
+		up(index);
+	}
+
+	void pop(){
+		heap[1]=heap[index--];
+		down(1);
+	}
+
+	int size(){
+		return size_;
+	}
+
+	int top(){
+		return heap[1];
+	}
+
+};
+
+
+int main(){
+
+	return 0;
+}
+
+
+#endif
+
+
+
+
+
+
+
+

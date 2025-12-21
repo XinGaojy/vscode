@@ -2,7 +2,7 @@
 
 
 
-#if 0
+#if 1
 
 #include <map>
 #include <functional>
@@ -128,7 +128,7 @@ int main(){
 
 
 
-
+#if 0
 
 
 class TimerManager{
@@ -312,8 +312,7 @@ public:
 int main(){
 
     TimerManager tm;
-    tm.addTimer(1000, [this]{
-        cout<<"hello"<<endl;
+    tm.addTimer(1000, [this]{        cout<<"hello"<<endl;
     });
     while(1){
         tm.update();
@@ -323,52 +322,69 @@ int main(){
 
 
 
+
+
 #include<iostream>
 using namespace std;
-class TimerManager{
+class timermanage{
 private:
     struct timer{
         int id;
-        std::chrono::stready_clock::timer_point expire;
+        std::chrono:stready_clock::timer_point expire;
         function<void()>func;
+        bool operator<(const timer& other) {
+            return expire<other.expire;
+        }
     };
-    mutex mtx;
-    multi_map<std::chrono::stready_clock::timer_point expire ,function<void()>func>timers;
-    unordered_map<int,decltype<timers>::iterator>active_timers;
 
+    multi_map<std::chrono::stready_clock::timer_point ,timer>timers;
+    unordered_map<int ,delctype(timers)>active_timers;
+    std::mutex mtx;
+    atomic<int>next_id={0};
 public:
-
-    //加入时间函数
-    int add_timer(std::chrono::stready_clock::timer_point expire, function<void()>f){
-        
-    }
-
-
-    //移除定时任务
-    void remove(int id){
-
+    int  add_timer(int dalay_ms,function<void()>func){
+        lock_gaurd<mutex>lock(mtx);
+        int id=next_id++;
+        auto it=std:chrono::stready_clock::now()+std::chrono::milliseconds(dalays);
+        auto iter=timers.emepalce_back(timer{id,it,func});
+        activec_timers[id]=iter;
+        return id;
 
     }
     
-    //执行定时任务
-    void update(){
-
-        
+    void remove(int id){
+        lock_gaurd<mutex>lock(mtx);
+        auto it=active_timer.find(id);
+        if(it!=activec.tiemr.end()){
+           timers.erase(it->second);
+           activec.erase(it);
+        }
     }
 
 
+
+    void update(){
+        auto now=std::chrono::strady_clock:now();
+        lock_gaurd<mutex>lock(mtx);
+        while(!activec.empty()){
+            auto it=timers.begin();
+            if(it->expire> now){
+                break;
+            }
+            if(it->second.func){
+                iter->second.func();
+            }
+            timers.erase(it);
+            active_timers.erase(it->second.id);
+        }
+    }
+    
+    
 };
 int main(){
-
-
-    while(1){
-
-        update();
-
-    }
+    
     return 0;
 }
-
 
 
 

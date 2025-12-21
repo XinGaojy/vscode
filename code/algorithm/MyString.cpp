@@ -334,4 +334,300 @@ public:
         return *this;
     }
     
+
+
 }
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class String{
+private:
+    static const size_t min_capacity=15;
+    size_t size_;
+    size_t capacity_;
+    char *data_;
+    void realloc_data(size_t new_capacity){
+        capacity_=max(capacity_,new_capacity);
+        char *new_data_=new char[capacity_+1];
+        memcpy(new_data_,data_,size_);
+        delete []data_;
+        data_=new_data_;
+    }
+
+   
+public:
+    
+    MyString():size_(0),capacity_(0){
+        capacity_=min_capacity;
+        data_new char[capacity_+1];
+        data[size_]='\0';
+    }
+    explicit MyString(const void *str,int len){
+        if(str){
+            capacity_=max(len,min_capacity);
+            data_=new char[capacity_+1];
+            size=len;
+            memcpy(data_,str,len);
+            data[len]='\0';
+        }
+    }
+
+    MyString(const MyString& other){
+        size_=other.size_;
+        capacity_=other.capacity_;
+        data_=new char[capacity_+1];
+        memcpy(data_,other.data_,size_+1);
+
+    }
+    MyString(MyString&& other){
+        size_=other.size_;
+        capacity_=other.capacity_;
+        data_=other.data_;
+        other.size_=nullptr;
+        other.capacity_=0_;
+        other.data_=nullptr;
+    }
+
+    MyString& operator=(const MyString& other){
+        if(&other!=this){
+            delete []data_;
+            size_=other.size_;
+            capacity_=other.capacity_;
+            data_=new char[size_+1];
+            memcpy(data_,other.data_,size_+1);
+
+        }
+        return *this;
+    }
+
+    MyString& operator=(const MyString&& other){
+        if(&other!=this){
+            delete []data_;
+            size_=other.size_;
+            capacity_=other.capacity_;
+            data_=other.data_;
+            other.data_=nullptr;
+            other.size_=0;
+            other.capacity_=0;
+        }
+        return *this;
+    }
+
+    void reserve(int new_capacity){
+        if(new_capaity_>capacity_){
+            realloc(new_capacity);
+        }
+    }
+};
+int main(){
+    return 0;
+}
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class MyString{
+private:
+    int size_;
+    int capacity_;
+    char *data_;
+    static const int min_capacity_=15;
+    void realloc(int new_capacity){
+        capacity_=max(new_capacity,capacity_);
+        char *new_data_=new char[capacity_+1];
+        memcpy(new_data_,data_,size_+1);
+        delete []data_;
+        data_=new_data_;
+    }
+public:
+    MyString():size_(0),capacity(min_capacity_),data_(nullptr){}
+
+    MyString(const char *p,int len){
+        capacity_=max(len,min_capacity_);
+        char *new_data_=new chhar[capacity_+1];
+        memcpy(new_data_,data_,len);
+        data_[len]='\0';
+
+    }
+
+    MyString(const MyString& other){
+        size_=other.size_;
+        capacity_=other.capacity_;
+        data_=new char[capacity_+1];
+        memcpy(data_,other.data_,size_);
+
+    }
+
+    MyString(MyString&& other) noexcept{
+        size_=other.size;
+        capacity_=other.capacity_;
+        data_=other.data_;
+        other.size_=0;
+        other.capacity_=0;
+        other.data_=nullptr;
+    }
+
+    MyString& operator=(MyString&& other)noexcept{
+        if(&other!=this){
+            delete []data_;
+            size_=other.size_;
+            capacity_=other.capacity_;
+            data_=other.data_;
+            other.size_=0;
+            other.capacity_=0;
+            other.data_=nullptr;
+        }
+        return *this;
+    }
+    MyString& operator=(const MyString& other){
+        if(&other !=this){
+            delete []data_;
+            size_=other.size_;
+            capacity_=other.capacity_;
+            data_=other.data_;
+            other.size_=0;
+            other.capacity_=0;
+            other.data_=nullptr;
+        }
+        return *this;
+    }
+    ~String(){
+        delete []data_;
+    }
+    
+    void reserve(int new_capacity){
+        if(capacity_<new_capacity){
+            realloc_data(new_capacity);
+        }
+    }
+    void shrink_to_fit(){
+        if(capacity_>size){
+            realloc_data(size_);
+        }
+    }
+
+    String & append(const char *str,size_t len){
+        if(!str){
+            throw std::invalid_argument("nullptr");
+
+        }
+        if(size_ +len >capacity_){
+            reserve((size_ +len)*2);
+        }
+        memcpy(data_+size_,str,len);
+        size_+=len;
+        data_[len]='\0';
+        return *this;
+    }
+
+    
+
+};
+int main(){
+
+    return 0;
+}
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class Mystring{
+private:
+    static const int min_capacity_=15;
+    char *data_;
+    int size_;
+    int capacity_;
+    void realloc(int new_capacity){
+        capacity_=max(capacity_,new_capaity_);
+        char *new_data_=new char[capacity_+1];
+        memcpy(new_data_,data_,size_+1);
+        delete []data_;
+        data_=new_data_;
+        data_[size_]='\0';
+    }
+public:
+    MyString(int n):capacity_(n),size_(0),data_(nullptr){}
+
+    Mystring(const char *p,int len){
+        if(len>capacity_){
+            realloc(len);
+        }
+        
+        memcpy(data_,p,len);
+        size_=len;
+        data[size_]='\0';
+    }
+
+    MyString(const MyString&  other){
+        size_=other.size_;
+        capacity_=other.capacity_;
+        data_=new [capacity_+1];
+        memcpy(data_,other.data_,size_+1);
+    }
+
+    Mystring& operator=(const MyString& other){
+        if(&other!=this){
+            delete []data_;
+            size_=other.size_;
+            capacity_=other.capacity_;
+            data_=new [capacity_+1];
+            memcpy(data_,other.data_,size_+1];
+                
+        }
+        return *this;
+    }
+
+    MyString(MyString&& other){
+        size_=other.size_;
+        capacity_=other.capacity_;
+        data_=other.data_;
+        other.size_=0;
+        other.capacity_=0;
+        other.data_=nullptr;
+    }
+
+    Mystring& operaotr=(Mystring&& other) noexcept {
+        if(&other !=this){
+            delete []data_;
+            size_=other.size_;
+            capacity_=other.capacity_;
+            data_=other.data_;
+            other.size_=0;
+            other.data_=0;
+            other.data_=ullptr;
+        }
+        return *this;
+    }
+};
+
+int main(){
+
+    return 0;
+}
+
+
+
+
+
+
+
+

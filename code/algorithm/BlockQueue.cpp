@@ -1,6 +1,6 @@
 
 
-#if 1
+#if 0
 
 #include <mutex>
 #include <condition_variable>
@@ -251,6 +251,7 @@ int main(){
 }
 
 #endif
+#if 0
 
 class BlockQueue{
 private:
@@ -298,6 +299,183 @@ public:
     }
 }
 
+#endif
 
 
 
+
+
+
+
+
+
+
+
+
+#if 0
+
+#include<iostream>
+#include<vector>
+#include<condition_variable>
+#include<mutex>
+#include<thread>
+using namespace std;
+class BlockQueue{
+private:
+    int size_;
+    int capacity_;
+    vector<size_t>que;
+    condition_variable not_full_;
+    condition_variable not_empty_;
+    mutex mtx;
+    size_t head_;
+    size_t tail_;
+
+public:
+    BlockQueue(int n):que(n),capacity_(n){
+        size_=0;
+        head_=0;
+        tail_=0;;
+
+    }
+
+    bool push(int val){
+        unique_lock<mutex>lock(mtx);
+        not_full_.wait(lock,[this]{
+            return size_<capacity_;
+        });  
+
+        que[tail_]=std::move(val);
+        tail_=(tail_+1)%capacity_;
+        size_++; 
+        not_empty_.notify_one();
+        return true;
+    }
+    
+    bool pop(int & val){
+        unique_lock<mutex>lock(mtx);
+        not_empty_.wait(lock,[this]{
+            return size_>0;
+
+        });
+        val=std::move(que[head_]);
+        head_=(head_+1)%capacity_;
+        size_--;
+        not_full_.notify_one();
+        return true;
+    }
+};
+int main(){
+    
+    BlockQueue bq(5);
+    thread producer([]{
+
+        for(int i=0;i<10;i++){
+            bq.push(i);
+
+        }
+    });
+
+    thread consumer([]{
+        int val;
+        bq.pop(val);
+        cout<<val<<endl;
+    });
+
+    return 0;
+}
+
+
+#endif
+
+
+
+
+
+
+
+#if 0
+
+#include<iostream>
+#include<vector>
+#include<condition_variable>
+#include<mutex>
+#include<thread>
+using namespace std;
+class BlockQueue{
+private:
+    int size_;
+    int capacity_;
+    vector<int>que;
+    condition_variable not_full_;
+    condition_variable not_empty_;
+    mutex mtx;
+    size_t head_;
+    size_t tail_;
+
+public:
+    BlockQueue(int n):que(n),capacity_(n){
+        size_=0;
+        head_=0;
+        tail_=0;;
+
+    }
+
+    bool push(int val){
+        unique_lock<mutex>lock(mtx);
+        not_full_.wait(lock,[this]{
+            return size_<capacity_;
+        });  
+
+        que[tail_]=std::move(val);
+        tail_=(tail_+1)%capacity_;
+        size_++; 
+        not_empty_.notify_one();
+        return true;
+    }
+    
+    bool pop(int & val){
+        unique_lock<mutex>lock(mtx);
+        not_empty_.wait(lock,[this]{
+            return size_>0;
+
+        });
+        val=std::move(que[head_]);
+        head_=(head_+1)%capacity_;
+        size_--;
+        not_full_.notify_one();
+        return true;
+    }
+};
+int main(){
+    
+    BlockQueue bq(5);
+    thread producer([&]{
+
+        for(int i=0;i<10;i++){
+            bq.push(i);
+
+        }
+    });
+
+    thread consumer([&]{
+        for(int i=0;i<10;i++){
+            int val;
+            bq.pop(val);
+            cout<<val<<endl;
+     
+        }
+        
+    });
+    producer.join();
+    consumer.join();
+
+    return 0;
+}
+
+
+
+
+#endif
+
+   

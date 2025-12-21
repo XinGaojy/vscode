@@ -637,3 +637,213 @@ int main(){
 	return 0;
 
 }
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+class threadpool{
+private:
+    struct task{
+        int id;
+        function<void()>func;
+        task(int i,function<void()>f):id(i),func(f){}
+    };
+    vector<thread>threads;
+    condition_variable condition;
+    mutex mtx;
+    function<void()>func;
+    bool stop=false;
+    atomic<size_t>current_id={0;}
+    atomic<size_t>next_id={0};
+    queue<task>tasks;
+public:
+
+threadpool(int n ){
+    for(int i=0;i<n;i++){
+        threads.emplace_back([this]{
+            while(1){
+                     {
+                        unique_lock<mutex>lock(mtx);
+                        condition.wait([this]{
+                            return stop ||(!task.empty() && current_id==que.front().id);
+                        });
+
+                        if(stop && tasks.empty()){
+                            return ;
+                        }
+
+                        {
+                            tk=tasks.front();
+                            tasks.pop_front();
+                        }
+
+                        
+                    }
+
+                    tk.func();
+                    {
+                        lock_guard<mutex>lock(mtx);
+                        current_id++;
+                    }
+                    condition.notify_all();
+
+                  }
+           
+            });
+    }
+
+~threadpool(){
+    {
+        lock_guard<mutex>lock(mtx);
+        stop=false;
+    }
+
+    for(auto i:threads){
+        if(i.joinable()){
+            i.join();
+        }
+    }
+    condition.notify_one();
+}
+
+template <class T,class... Args>
+void push(T && t,Args... args){
+    function<void()>func=std::bind(std::forward<T>t,std::forward<Args>args);
+    {
+        lock_guard<mutex>lock(mtx);
+        tasks.emplace_back(task{next_id++,func};
+    }
+
+    condition.notify_one();
+
+}
+
+};
+
+
+int main(){
+
+    threadpool tp(10);
+    for(int i=0;i<10;i++){
+        tp.emplace_back([i]{
+             tp.push(i);
+        });
+    }
+
+    return 0;
+}
+
+
+#endif
+
+
+
+#if 0
+
+#include<iostream>
+using namespace std;
+
+class threadpool{
+private:
+    struct task{
+        int id;
+        function<void()>func;
+        task(int i,function<void()>f):i(id),func(f){}
+    };
+    condition_variable condition;
+    mutex mtx;
+    atomic<size_t>currente_id={0};
+    atomic<size_t>next_id{0};
+    vector<thread>threads;
+    queue<task>tasks;
+    bool stop=false;
+public:
+
+    threadpool(int n){
+        for(int i=0;i<n;i++){
+            threads.emplace_back([this]{
+
+                task tk{-1,nullptr};
+                while(1){
+                    {
+                        unique_lock<mutex>lock(mtx);
+                        condition.wait(lock,[this]{
+                            return stop || (!tasks.empty() && tasks.front().id ==current_id);
+                        });
+                        
+                        if(stop && tasks.empty()) return ;
+
+                        {
+                            lock_guare<mutex>lock(mtx);
+                            tk=std::move(tasks.front());
+                            tasks.pop_front();
+                        }
+
+                        if(tk.func){
+                            tk.func();
+                        }
+                        
+                        {
+                            lock_guard<mutex>lock(mtx);
+                            current_id++;
+                        }
+                        
+                        condition.notify_all();
+                    }
+
+                }
+            });
+        }
+    }
+
+    template <class T,class... Args>
+    void push(T && t,Args... args){
+        function<void()>func=std::bind(std::forward<T>t,std::forward<T>(args)...);
+        {
+            lock_guard<mutex>lock(mtx);
+            tasks.emplace_back(task{next_id++,func});
+        }
+        
+        condition.notify_one();
+    
+    }
+
+    ~threadpool(){
+        {
+            lock_guard<mutex>lock(mtx);
+            stop=true;
+        }
+
+        for(auto i:threads){
+            if(i.joinable()){
+                i.join();
+            }
+        }
+
+        condition.notify_all();
+    }
+
+
+};
+int main(){
+
+    threads tp(10);
+    
+
+    for(int i=0;i<10;i++){
+        tp.push([i]{
+            cout<<i<<endl; 
+        });
+    }
+
+    return 0;
+
+}
+
+
+#endif
+
+
+
