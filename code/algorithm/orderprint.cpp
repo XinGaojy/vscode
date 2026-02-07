@@ -218,7 +218,7 @@ int main(){
 
 
 
-
+#if 0
 
 #include<iostream>
 #include<thread>
@@ -256,6 +256,8 @@ int main(){
     return 0;
 }
 
+
+#endif
 
 
 
@@ -295,5 +297,42 @@ int main(){
 
 #endif
 
+
+
+
+
+
+
+
+#include<iostream>
+#include<thread>
+#include<atomic>
+#include<condition_variable>
+#include<mutex>
+using namespace std;
+std::mutex mtx;
+std::atomic<int>current_id={0};
+condition_variable condition;
+void print(int thread_id,char c){
+    for(int i=thread_id;i<=100*3;i+=3){
+        unique_lock<mutex>lock(mtx);
+        condition.wait(lock,[i]{
+            return current_id==i; 
+        });
+        current_id++;
+        condition.notify_all();
+        cout<<i<<endl;
+    }
+}
+
+int main(){
+    thread t1(print,0,'a');
+    thread t2(print,1,'b');
+    thread t3(print,2,'c');
+    t1.join();
+    t2.join();
+    t3.join();
+    return 0;
+}
 
 

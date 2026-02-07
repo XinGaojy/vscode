@@ -1,5 +1,5 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 #if 0
 void quicksort(vector<int>& vec,int left,int right){
@@ -22,9 +22,7 @@ void quicksort(vector<int>& vec,int left,int right){
   quicksort(vec,j+1,right);
 }
 
-
 #endif
-
 
 #if 0
 vector<int>res;
@@ -52,10 +50,7 @@ int quicksort(vector<int>& vec,int left,int right,int k){
 
 #endif
 
-
-
-
-#if 1
+#if 0
 
 // 快速选择算法，返回前k大元素的起始位置
 int quickSelect(vector<int>& vec, int left, int right, int k) {
@@ -99,21 +94,19 @@ int main() {
     return 0;
 }
 
-
 #endif
-
 
 #if 0
 
 int main(){
   vector<int>vec={1,4,3,2,2,3,5,2,1};
    cout<< quicksort(vec,0,vec.size()-1,3);
-   // quicksort(vec,0,vec.size()-1); 
+   // quicksort(vec,0,vec.size()-1);
 #if 0
   for(auto i:vec){
     cout<<i<<endl;
   }
-  
+
 #endif
   
   for(auto i:res){
@@ -123,9 +116,66 @@ int main(){
   return 0;
 }
 
-
 #endif
 
+#if 1
+
+#include <iostream>
+#include <vector>
+using namespace std;
+void quicksort(vector<string>& vec, int left, int right) {
+  if (left >= right) return;
+  int i = left - 1;
+  int j = right + 1;
+  int mid = (right - left) / 2 + left;
+  string x = vec[mid];
+  while (i < j) {
+    do i++;
+    while (vec[i] < x);
+    do j--;
+    while (vec[j] > x);
+    if (i < j) {
+      swap(vec[i], vec[j]);
+    }
+  }
+  quicksort(vec, left, j);
+  quicksort(vec, j + 1, right);
+}
+
+int main() {
+  vector<string> vec = {"abc", "ab", "ac", "db"};
+  int k = 0;
+  quicksort(vec, 0, vec.size() - 1);
+  for (auto i : vec) {
+    cout << i << endl;
+  }
+  return 0;
+}
+
+#endif
+#include<iostream>
+using namespace std;
+void quicksort(vector<int>&vec,int left,int right){
+  if(left>=right)return;
+  int mid=(right -left)/2+left;
+  int mid=(right-left)/2+left;
+  int x=vec[mid];
+  while(i<j){
+    do i++;while(vec[i]<x);
+    do j--;while(vec[j]>x);
+    if(i<j)swap(vec[i],vec[j]);
+  }
+  quicksort(vec,left,j);
+  quicksort(vec,j+1,right);
+}
+int main(){
+  vector<int>vec={1,4,3,2};
+  quicksort(vec,0,vec.size()-1);
+  for(auto i:vec){
+    cout<<i<<endl;
+  }
+  return 0;
+}
 
 
 

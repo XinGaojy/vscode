@@ -15,7 +15,7 @@ class Threadpool {
   bool stop;
   atomic<int> current_id = {0};
   atomic<int> next_id = {0};
-  deque<task> tasks;
+  queue<task> tasks;
 
  public:
   Threadpool(int n) : stop(false) {
@@ -77,4 +77,14 @@ int main() {
 }
 
 #endif
+
+#include<iostream>
+using namespace std;
+int main(){
+  cout<<35*15<<endl;
+  cout<<33*15<<endl;
+  cout<<30*15<<endl;
+  cout<<26*16<<endl; 
+  return 0;
+}
 

@@ -40,7 +40,6 @@ int main() {
 
 
 
-
 #if 0
 #include<iostream>
 #include<stdio.h>
@@ -60,12 +59,12 @@ int main(){
 
 #endif
 
-#if 0
+#if 1
 
 //使用union的方式来判断
 #include <stdio.h>
 union {
-    unsigned int u;
+    unsigned int u=0x12345678;
     unsigned char c[4];
 } testend;
 int main() {
@@ -83,21 +82,5 @@ int main() {
 
 #endif
 
-#include<stdio.h>
-union{
-    unsigned int u;
-    unsigned char c[4];
-}test;
 
-int main(){
-    test.u=12345678;
-    if(test.c[0]=78){
-        printf("小端");
-    }else if(test.c[0]==12){
-        printf("大端");
-    }else{
-        printf("nosure");
-    }
-    return 0;
-}
 

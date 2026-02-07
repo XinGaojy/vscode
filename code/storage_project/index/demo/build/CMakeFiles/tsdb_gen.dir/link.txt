@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tsdb_gen.dir/tools/generate_data.cpp.o -o tsdb_gen 

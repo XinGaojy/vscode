@@ -40,7 +40,7 @@ int main(){
 
 
 
-
+#if 0
 #include<iostream>
 #include<mutex>
 #include<unistd.h>
@@ -77,9 +77,39 @@ int main(){
   return 0;
 }
 
+#endif
 
 
 
+#include<mutex>
+#include<thread>
+#include<iostream>
+#include<unistd.h>
+using namespace std;
+mutex mtx1,mtx2,mtx3;
+void f1(){
+  lock_guard<mutex>lock1(mtx1);
+  sleep(1);
+  lock_guard<mutex>lock2(mtx2);
+}
 
+void f2(){
+  lock_guard<mutex>lock2(mtx2);
+  sleep(1);
+  lock_guard<mutex>lock3(mtx3);
+}
 
+void f3(){
+  lock_guard<mutex>lock3(mtx3);
+  sleep(1);
+  lock_guard<mutex>lock1(mtx1);
+}
+int main(){
+  thread t1(f1);
 
+  thread t2(f2);
+  thread t3(f3);
+  t1.join();
+  t2.join();
+  t3.join();  
+}

@@ -3,6 +3,9 @@
 
 //后续实现sylar的配置系统
 
+
+#if 1
+
 #include <iostream>
 #include <string>
 #include <map>
@@ -148,5 +151,267 @@ Redis port: 6379
 
     return 0;
 }
+
+
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
+//使用模板元编程实现编译时的配置器
+#include <iostream>
+#include <array>
+#include <string>
+#include <vector>
+#include <chrono>
+
+// 编译时配置系统
+template<typename Config>
+class ConfigSystem {
+    static constexpr auto config = Config::generate();
+    
+public:
+    template<auto Key>
+    static constexpr auto get() {
+        return std::get<Config::template find<Key>()>(config);
+    }
+    
+    static void print() {
+        std::cout << "配置系统:\n";
+        Config::print_config();
+    }
+};
+
+// 数据库配置示例
+struct DatabaseConfig {
+    static constexpr std::string_view name = "database";
+    
+    struct Keys {
+        static constexpr std::string_view host = "host";
+        static constexpr std::string_view port = "port";
+        static constexpr std::string_view user = "user";
+        static constexpr std::string_view password = "password";
+        static constexpr std::string_view database = "database";
+    };
+    
+    static constexpr auto generate() {
+        return std::make_tuple(
+            std::make_pair(Keys::host, "localhost"),
+            std::make_pair(Keys::port, 5432),
+            std::make_pair(Keys::user, "admin"),
+            std::make_pair(Keys::password, "secret123"),
+            std::make_pair(Keys::database, "myapp")
+        );
+    }
+    
+    template<auto Key>
+    static constexpr size_t find() {
+        constexpr auto config = generate();
+        return find_impl<Key>(config, std::make_index_sequence<std::tuple_size_v<decltype(config)>>{});
+    }
+    
+    template<auto Key, typename Tuple, size_t... Is>
+    static constexpr size_t find_impl(const Tuple&, std::index_sequence<Is...>) {
+        size_t index = 0;
+        (((std::get<Is>(generate()).first == Key ? (index = Is, false) : false) || ...), true);
+        return index;
+    }
+    
+    static void print_config() {
+        constexpr auto config = generate();
+        std::apply([](auto&&... items) {
+            ((std::cout << "  " << items.first << " = " << items.second << "\n"), ...);
+        }, config);
+    }
+};
+
+// 编译时路由系统
+template<typename... Routes>
+class Router {
+    static constexpr std::array routes = {Routes::template match<>()...};
+    
+public:
+    template<auto Path>
+    static constexpr auto route() {
+        for (const auto& route : routes) {
+            if (route.first == Path) {
+                return route.second;
+            }
+        }
+        return []() { return "404 Not Found"; };
+    }
+    
+    static void print_routes() {
+        std::cout << "可用路由:\n";
+        for (const auto& route : routes) {
+            std::cout << "  " << route.first << "\n";
+        }
+    }
+};
+
+template<auto Path, auto Handler>
+struct Route {
+    template<typename = void>
+    static constexpr auto match() {
+        return std::make_pair(Path, []() { return Handler(); });
+    }
+};
+
+// 编译时工厂模式
+template<typename... Types>
+class Factory {
+    static constexpr std::array type_names = {TypeInfo<Types>::name...};
+    
+public:
+    template<typename T>
+    static T create() {
+        std::cout << "创建: " << TypeInfo<T>::name << "\n";
+        return T{};
+    }
+    
+    template<auto TypeName>
+    static auto create_by_name() {
+        constexpr size_t index = []() {
+            for (size_t i = 0; i < type_names.size(); ++i) {
+                if (type_names[i] == TypeName) {
+                    return i;
+                }
+            }
+            return type_names.size();
+        }();
+        
+        static_assert(index < type_names.size(), "未知类型");
+        return create_by_index<index>();
+    }
+    
+private:
+    template<size_t Index>
+    static auto create_by_index() {
+        using T = std::tuple_element_t<Index, std::tuple<Types...>>;
+        return create<T>();
+    }
+};
+
+// 性能监控装饰器
+template<typename T>
+class Monitored {
+    T instance;
+    
+public:
+    template<typename... Args>
+    Monitored(Args&&... args) : instance(std::forward<Args>(args)...) {}
+    
+    template<auto Method, typename... Args>
+    auto call(Args&&... args) {
+        auto start = std::chrono::high_resolution_clock::now();
+        auto result = (instance.*Method)(std::forward<Args>(args)...);
+        auto end = std::chrono::high_resolution_clock::now();
+        
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+        std::cout << "方法调用耗时: " << duration.count() << " 微秒\n";
+        
+        return result;
+    }
+};
+
+void demonstrate_comprehensive_example() {
+    std::cout << "\n=== 综合示例 ===\n";
+    
+    // 1. 配置系统
+    std::cout << "\n1. 编译时配置系统:\n";
+    using DBConfig = ConfigSystem<DatabaseConfig>;
+    DBConfig::print();
+    
+    std::cout << "\n获取配置值:\n";
+    std::cout << "host: " << DBConfig::get<DatabaseConfig::Keys::host>() << "\n";
+    std::cout << "port: " << DBConfig::get<DatabaseConfig::Keys::port>() << "\n";
+    
+    // 2. 路由系统
+    std::cout << "\n2. 编译时路由系统:\n";
+    
+    auto home_handler = []() { return "Home Page"; };
+    auto about_handler = []() { return "About Page"; };
+    auto contact_handler = []() { return "Contact Page"; };
+    
+    using AppRouter = Router<
+        Route<"/", home_handler>,
+        Route<"/about", about_handler>,
+        Route<"/contact", contact_handler>
+    >;
+    
+    AppRouter::print_routes();
+    
+    std::cout << "\n路由测试:\n";
+    std::cout << "GET / -> " << AppRouter::route<"/">()() << "\n";
+    std::cout << "GET /about -> " << AppRouter::route<"/about">()() << "\n";
+    std::cout << "GET /unknown -> " << AppRouter::route<"/unknown">()() << "\n";
+    
+    // 3. 工厂模式
+    std::cout << "\n3. 编译时工厂:\n";
+    
+    struct WidgetA { void use() { std::cout << "使用WidgetA\n"; } };
+    struct WidgetB { void use() { std::cout << "使用WidgetB\n"; } };
+    struct WidgetC { void use() { std::cout << "使用WidgetC\n"; } };
+    
+    template<> struct TypeInfo<WidgetA> { static constexpr std::string_view name = "WidgetA"; };
+    template<> struct TypeInfo<WidgetB> { static constexpr std::string_view name = "WidgetB"; };
+    template<> struct TypeInfo<WidgetC> { static constexpr std::string_view name = "WidgetC"; };
+    
+    using WidgetFactory = Factory<WidgetA, WidgetB, WidgetC>;
+    
+    auto widget1 = WidgetFactory::create_by_name<"WidgetA">();
+    auto widget2 = WidgetFactory::create_by_name<"WidgetB">();
+    
+    widget1.use();
+    widget2.use();
+    
+    // 4. 性能监控
+    std::cout << "\n4. 编译时性能监控:\n";
+    
+    struct ExpensiveOperation {
+        int compute(int n) {
+            // 模拟耗时操作
+            int result = 0;
+            for (int i = 0; i < n * 1000; ++i) {
+                result += i;
+            }
+            return result;
+        }
+        
+        void process(const std::string& data) {
+            // 模拟处理
+            for (char c : data) {
+                volatile char temp = c;  // 防止优化
+            }
+        }
+    };
+    
+    Monitored<ExpensiveOperation> monitored_op;
+    
+    std::cout << "计算操作:\n";
+    int result = monitored_op.call<&ExpensiveOperation::compute>(1000);
+    std::cout << "结果: "<<std::endl;
+}
+
+
+
+int main(){
+
+    demonstrate_comprehensive_example();
+    return 0;
+}
+#endif
 
 

@@ -1,0 +1,7 @@
+cpu host=10.0.0.1 domain=beijing zone=x timestamp=1769866020 1 2 3 4 5
+cpu host=10.0.0.1 domain=beijing zone=x timestamp=1769866021 1 2 3 4 5
+cpu host=10.0.0.1 domain=beijing zone=x timestamp=1769866022 1 2 3 4 5
+cpu host=10.0.0.1 domain=beijing zone=x timestamp=1769866023 1 2 3 4 5
+cpu host=10.0.0.1 domain=beijing zone=x timestamp=1769866024 1 2 3 4 5
+mem host=10.0.0.1 domain=beijing zone=y timestamp=1769866022 1 1 1 1 1
+mem host=10.0.0.2 domain=shanghai zone=y timestamp=1769866023 2 2 2 2 2

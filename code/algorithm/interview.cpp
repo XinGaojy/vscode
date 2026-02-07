@@ -1,3 +1,4 @@
+#if 0
 本人也是菜鸟一枚，帖子也会相应的发布自己对于题目的解法和看法，但是可能想得不够，也希望大家能够一起讨论，一起进步。
 
 1.数组中找出所有重复数字？空间复杂度为O（1），时间复杂度最小？
@@ -15,6 +16,36 @@
 
 饿汉懒汉的区别、好处、缺点都要会 这里可能会引申出单例的条件
 
+#endif
+
+
+#include<iostream>
+using namespace std;
+class singleton{
+private:
+  singleton()=default;
+  singleton(const singleton& )=delete;
+  singleton(singleton&& )=delete;
+  singleton& operator=(const singleton& )=delete;
+  singleton& operator=(singleton&& )=delete;
+public:
+  static singleton& getInstance(){
+      static singleton instance;
+      return instance;
+  }
+  
+  void print(){
+    cout<<this<<endl;
+  }
+};
+int main(){
+  singleton::getInstance().print();
+  return 0;
+}
+
+
+
+#if 0
 5.手写生产者消费者模式？
 
 不解释，不理解的，先背住再好好理解
@@ -80,3 +111,11 @@
 28.给一个字符串，由26个英文字母组成，判断其中有没有重复出现的元素，有返回true，没有返回false
 
 桶排序，大于1 就返回ture
+
+
+
+
+
+#endif
+
+

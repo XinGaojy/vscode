@@ -38,12 +38,32 @@
 /* ------------------------------------------------------------------ */
 /*  常量定义 - 针对2核2G优化                                           */
 /* ------------------------------------------------------------------ */
+#if 0
+
 #define MAX_EVENTS 16         // 减少epoll事件数量
 #define MAX_COR 500          // 减少最大协程数量
-#define STACK_SIZE (64 * 1024) // 增加栈大小到64KB确保安全
-#define MAX_SCHEDULERS 2     // 限制调度器数量为2个
+#define STACK_SIZE (1024) // 增加栈大小到64KB确保安全
+#define MAX_SCHEDULERS 1     // 限制调度器数量为2个
 #define BUF_SIZE 1024        // 增加缓冲区大小
 #define LISTEN_BACKLOG 32    // 减少backlog
+
+#endif
+
+#if 1
+
+#define MAX_EVENTS 16         // 减少epoll事件数量
+#define MAX_COR 1             // 减少最大协程数量
+#define STACK_SIZE (1024) // 增加栈大小到64KB确保安全
+#define MAX_SCHEDULERS 1     // 限制调度器数量为2个
+#define BUF_SIZE 1024        // 增加缓冲区大小
+#define LISTEN_BACKLOG 32    // 减少backlog
+
+
+
+#endif
+
+
+
 
 /* ------------------------------------------------------------------ */
 /*  上下文切换                                                         */
@@ -207,6 +227,8 @@ public:
 /*  调度器                                                             */
 /* ------------------------------------------------------------------ */
 class scheduler {
+
+public:
     friend class coroutine;
     int                id_;
     pthread_t          tid_;
@@ -652,6 +674,9 @@ static int tcp_listen(int port) {
 /* ------------------------------------------------------------------ */
 /*  示例：echo server                                                  */
 /* ------------------------------------------------------------------ */
+
+#if 0
+
 static void echo_client(void* arg) {
     int fd = (int)(intptr_t)arg;
     char buf[BUF_SIZE];
@@ -675,6 +700,39 @@ static void echo_client(void* arg) {
     close(fd);
 }
 
+
+
+#endif
+#if 1
+static void echo_client(void* arg)
+{
+    int fd = (int)(intptr_t)arg;
+    scheduler* sched = scheduler::local();
+    if (!sched) { close(fd); return; }
+
+    std::vector<char> buf(BUF_SIZE);   // 放堆里，避免栈爆炸
+
+    while (sched->running_.load()) {
+        sched->wait_fd(fd, EPOLLIN);
+
+        ssize_t n = read(fd, buf.data(), buf.size());
+        if (n <= 0) break;
+
+        sched->wait_fd(fd, EPOLLOUT);
+        ssize_t w = write(fd, buf.data(), n);
+        if (w < 0) break;
+    }
+
+    /* 关键：先删事件，再 close，避免 epoll 悬垂 */
+    epoll_ctl(sched->ep_fd_, EPOLL_CTL_DEL, fd, nullptr);
+    close(fd);
+}
+
+
+#endif
+
+
+#if 0
 static void echo_server(void*) {
     int listen_fd = tcp_listen(8000);
     if (listen_fd < 0) {
@@ -702,6 +760,40 @@ static void echo_server(void*) {
         sched->spawn(echo_client, (void*)(intptr_t)cli);
     }
 }
+#endif
+
+#if 1
+static void echo_server(void*)
+{
+    int listen_fd = tcp_listen(8000);
+    if (listen_fd < 0) return;
+
+    printf("Echo server listening on port 8000\n");
+    scheduler* sched = scheduler::local();
+    if (!sched) return;
+
+    while (sched->running_.load()) {
+        sched->wait_fd(listen_fd, EPOLLIN);
+
+        sockaddr_in client_addr;
+        socklen_t addr_len = sizeof(client_addr);
+        int cli = accept4(listen_fd, (sockaddr*)&client_addr, &addr_len,
+                          SOCK_NONBLOCK | SOCK_CLOEXEC);
+        if (cli < 0) continue;
+
+        char ip[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &client_addr.sin_addr, ip, sizeof(ip));
+        printf("New connection from %s:%d\n", ip, ntohs(client_addr.sin_port));
+
+        sched->spawn(echo_client, (void*)(intptr_t)cli);
+    }
+    /* listen_fd 由调度器生命周期管理，不在此 close */
+}
+
+#endif
+
+
+
 
 } // namespace tcr
 

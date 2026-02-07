@@ -84,7 +84,7 @@ class Subject {
 private:
 
     std::string state_;
-    
+    std::vector<Observer*>observers_;
 public:
     void attach(Observer* observer) {
         observers_.push_back(observer);
@@ -173,6 +173,9 @@ int main() {
 
 
 #endif
+
+
+#if 0
 #include<iostream>
 #include<vector>
 #include<string>
@@ -252,10 +255,81 @@ int main()
     sub.push(&macbook);
     sub.setState("新版本");
     sub.pop(&iphone);
-    sub.setstate("new");
-    return 0;
 }
 
 
+#endif
 
 
+
+
+
+
+
+
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<iostream>
+using namespace std;
+class base{
+public:
+    virtual ~base()=default;
+    virtual void update(const string& name)=0;
+};
+
+class iphone: public base{
+private:
+    string name_;
+public:
+    iphone(const string& s):name_(s){}
+    void update(const string&name) override {
+        cout<<name_<<name<<endl;    
+    }
+};
+
+class macbook: public base{
+private:
+    string name_;
+public:
+    macbook(const string s):name_(s){}
+    void update(const string&name) override {
+        cout<<name_<<name<<endl;
+    }
+};
+
+class control{
+private:
+    string name_;
+    vector<base*>vec_;
+public:
+    void push(base* o){
+        vec_.push_back(o);
+    }
+
+    void remove(base* o){
+        vec_.erase(std::remove(vec_.begin(),vec_.end(),o),vec_.end());
+    }
+    
+    void setstate(const string&new_name){
+        name_=new_name;
+        notify();
+    }
+    void notify(){
+        for(auto i:vec_){
+            i->update(name_);
+        }
+    }
+};
+
+int main(){
+    control ctrl;
+    iphone ip("1");
+    macbook mc("2");
+    ctrl.push(&ip);
+    ctrl.push(&mc);
+    ctrl.setstate("hello");
+    ctrl.remove(&ip);
+    ctrl.setstate("bage");
+    return 0;
+}

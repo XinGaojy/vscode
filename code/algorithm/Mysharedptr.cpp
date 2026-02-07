@@ -125,7 +125,7 @@ int main() {
     ptr2=std::move(ptr3);
     cout << *ptr2;
     cout<<ptr2.get_count();
-    //test_shared_ptr_thread_safety();
+    test_shared_ptr_thread_safety();
     return 0;
 }
 #endif
@@ -740,6 +740,5 @@ int main(){
 
 
 #endif
-
 
 

@@ -1,0 +1,2 @@
+partition_seconds 3600
+points_format binary

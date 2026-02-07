@@ -229,7 +229,179 @@ public:
 
 
 
+#if 0
+#include<vector>
+#include<unordered_map>
+#include<iostream>
+#include<unordered_map>
+using namespace std;
+class LruCache{
 
+private:
+    struct ListNode{
+        int key;
+        int value;
+        ListNode*next;
+        ListNode* pre;
+        ListNode(int k,int v):key(k),value(v),next(nullptr),pre(nullptr){}
+    };
 
+    ListNode* dummy;
+    ListNode* last;
+    unordered_map<int,ListNode*>map;
+    int capacity;
+    
 
+    void remove(ListNode*node){
+        node->next->pre=node->pre;
+        node->pre->next=node->next;
+        map.erase(node->key);
+    }
 
+    void insert(int key,int value){
+        ListNode*node=new ListNode(key,value);
+        last->pre->next=node;
+        node->pre=last->pre;
+        node->next=last;
+        last->pre=node;
+        map[key]=node;
+    }
+public:
+    LruCache(int n){
+        capacity=n;
+        dummy=new ListNode(-1,-1);
+        last=new ListNode(-1,-1);
+        dummy->next=last;
+        last->pre=dummy;
+    }
+    
+    int get(int key){
+        if(map.count(key)){
+            ListNode* node=map[key];
+            remove(node);
+            insert(node->key,node->value);
+            return node->value;
+        }else{
+            return -1;
+        }
+    }
+
+    void put(int key,int value){
+        if(map.count(key)){
+            ListNode* node=map[key];
+            remove(node);
+            insert(key,value);
+        }else{
+            if(map.size()==capacity){
+                remove(dummy->next);
+                insert(key,value);
+            }else{
+                insert(key,value);
+            }
+        }
+    }
+
+};
+int main(){
+    LruCache lru(10);
+    cout<<lru.get(1)<<endl;
+    lru.put(1,2);
+    lru.put(1,3);
+    
+    cout<<lru.get(1)<<endl;
+    
+    lru.put(2,3);
+    lru.put(1,3);
+    cout<<lru.get(1)<<endl;
+
+    return 0;
+}
+
+#endif
+#include<vector>
+#include<unordered_map>
+#include<iostream>
+using namespace std;
+struct ListNode{
+    int key;
+    int value;
+    ListNode* pre;
+    ListNode* next;
+    ListNode(int k,int v):key(k),value(v),pre(nullptr),next(nullptr){}
+};
+class LruCache{
+private:
+    unordered_map<int,ListNode*>map;
+    int capacity;
+    ListNode* dummy;
+    ListNode* last;
+
+    void remove(ListNode* node){
+        node->pre->next=node->next;
+        node->next->pre=node->pre;
+        map.erase(node->key);
+    }
+
+    void insert(int key,int value){
+        ListNode* node=new ListNode(key,value);
+        last->pre->next= node;
+        node->pre=last->pre;
+        node->next=last;
+        last->pre=node;
+        map[key]=node;
+    }
+
+public:
+    LruCache(int n):capacity(n){
+        dummy=new ListNode(-1,-1);
+        last=new ListNode(-1,-1);
+        dummy->next=last;
+        last->pre=dummy;
+    }
+
+    int get(int key){
+        if(map.count(key)){
+            ListNode* node=map[key];
+            remove(node);
+            insert(node->key,node->value);
+            return node->value;
+        }else{
+            return -1;
+        }
+    }
+
+    void put(int key,int value){
+        if(map.count(key)){
+            ListNode* node=map[key];
+            remove(node);
+            insert(key,value);
+        }else{
+            if(map.size()==capacity){
+                remove(dummy->next);
+                insert(key,value);
+            }else{
+                insert(key,value);
+            }
+        }
+    }
+
+};
+int main(){
+    LruCache Lru(3);
+    cout<<Lru.get(1)<<endl;
+    Lru.put(1,2);
+    Lru.put(2,2);
+    Lru.put(1,3);
+    Lru.put(2,4);
+    Lru.put(3,4);
+    Lru.put(3,3);
+    //(1,3)(2,4)(3,3)
+    cout<<Lru.get(1)<<endl;
+    //(2,4)(3,3)(1,3)
+    Lru.put(4,4);
+    //(3,3)(1,3)(4,4)
+    cout<<Lru.get(2)<<endl;
+
+    cout<<Lru.get(1)<<endl;
+    return 0;
+}

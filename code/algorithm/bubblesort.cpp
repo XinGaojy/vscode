@@ -1,6 +1,6 @@
 
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,7 +21,6 @@ void bubblesort(vector<int>& vec){
 }
 
 #endif
-
 
 #if 0
 void bubblesort(vector<int>& vec){
@@ -48,16 +47,11 @@ int main(){
 	return 0;
 }
 
-
-
 #endif
 
-
-
-
 #if 0
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace  std;
 void bubblesort(vector<int>& vec){
 	int n=vec.size();
@@ -85,6 +79,70 @@ int main(){
 	return 0;
 }
 
+#endif
+
+#if 0
+
+#include <iostream>
+using namespace std;
+void bubblesort(vector<int>& vec) {
+  int n = vec.size();
+  for (int i = 0; i < n; i++) {
+    bool flag = false;
+    for (int j = 0; j < n - i - 1; j++) {
+      if (vec[j] > vec[j + 1]) {
+        swap(vec[j], vec[j + 1]);
+        flag = true;
+      }
+    }
+
+    if (flag == false) {
+      break;
+    }
+  }
+}
+int main() {
+  vector<int> vec = {-1, 5, 1, 2, 2, 4, 3, 2};
+  bubblesort(vec);
+  for (auto i : vec) {
+    cout << i << endl;
+  }
+  return 0;
+}
+#endif
+
+
+
+
+#if 0
+#include <iostream>
+#include <vector>
+using namespace std;
+void bubblesort(vector<int>& vec) {
+  int n = vec.size();
+  for (int i = 0; i < n; i++) {
+    bool flag = false;
+    for (int j = 0; j < n - i - 1; j++) {
+      if (vec[j] > vec[j + 1]) {
+        swap(vec[j], vec[j + 1]);
+        flag = true;
+      }
+    }
+
+    if (flag == false) {
+      break;
+    }
+  }
+}
+int main() {
+  vector<int> vec = {1, 4, 3, 2};
+  bubblesort(vec);
+  for (auto i : vec) {
+    cout << i << endl;
+  }
+  return 0;
+}
+
 
 #endif
 
@@ -94,15 +152,16 @@ int main(){
 
 
 #include<iostream>
+#include<vector>
 using namespace std;
-void bubblesort(vector<int>& vec){
+void bubblesort(vector<int>&vec){
 	int n=vec.size();
 	for(int i=0;i<n;i++){
 		bool flag=false;
 		for(int j=0;j<n-i-1;j++){
 			if(vec[j]>vec[j+1]){
-					swap(vec[j],vec[j+1]);
-					flag=true;
+				swap(vec[j],vec[j+1]);
+				flag=true;
 			}
 		}
 
@@ -112,16 +171,10 @@ void bubblesort(vector<int>& vec){
 	}
 }
 int main(){
-	vector<int>vec={-1,5,1,2,2,4,3,2};
+	vector<int>vec={1,4,3,2};
 	bubblesort(vec);
 	for(auto i:vec){
-			cout<<i<<endl;
+		cout<<i<<endl;
 	}
 	return 0;
 }
-
-
-
-
-
-

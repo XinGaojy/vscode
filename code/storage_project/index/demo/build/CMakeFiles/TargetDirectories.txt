@@ -1,0 +1,4 @@
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/tsdb.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/tsdb_gen.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/edit_cache.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/rebuild_cache.dir

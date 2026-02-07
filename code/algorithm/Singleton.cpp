@@ -754,7 +754,9 @@ int main(){
 #if 0
 
 #include<iostream>
+#include<mutex>
 using namespace std;
+
 class Singletion{
 private:
     mutex mtx;
@@ -763,20 +765,25 @@ private:
     Singletion(Singletion&& )=delete;
     Singletion& operator=(const Singletion& )=delete;
     Singletion& operator=(const Singletion&& )=delete;
-    static Singletion& getinstance(){
-        static Singletion instance;
-        return instance;
-    }
-
 public:
+    static int a;
+    static Singletion& GetInstance(){
+            static Singletion instance;
+            return instance;
+    }
     void print(){
         cout<< this<<endl;
     }
 };
-
+int main(){
+    Singletion::GetInstance().print();
+    return 0;
+}
 
 #endif
 
+
+#if 0
 #include<iostream>
 #include<mutex>
 #include<atomic>
@@ -837,9 +844,94 @@ int main(){
 }
 
 
+#endif
 
 
 
 
 
+#if 1
+
+#include<iostream>
+using namespace std;
+class Singletion{
+private:
+    Singletion()=default;
+    Singletion(const Singletion& )=delete;
+    Singletion(const Singletion&& )=delete;
+    Singletion& operator=(const Singletion &)=delete;
+    Singletion& operator=(Singletion&& )=delete;
+public:
+
+   static Singletion& GetInstance(){
+        static Singletion instance;
+        return instance;
+   }
+
+   void print(){
+        cout<<this<<endl;
+   }
+};
+
+
+#endif
+
+
+
+#if 1
+#include<mutex>
+#include<atomic>
+#include<iostream>
+#include<unistd.h>
+#include<memory.h>
+using namespace std;
+class Singleton{
+private:
+    static std::mutex mtx;
+    static std::atomic<Singleton*>instance;
+    Singleton()=default;
+    Singleton(const Singleton& )=delete;
+    Singleton(Singleton&& )=delete;
+    Singleton& operator=(const Singleton& )=delete;
+    Singleton& operator=(Singleton&& )=delete;
+    static void distructor(){
+        if(instance){
+            delete instance;
+            instance=nullptr;
+        }
+    }
+public:
+
+    static Singleton* GetInstance(){
+        Singleton* temp=instance.load(std::memory_order_acquire);
+        if(temp==nullptr){
+            lock_guard<mutex>lock(mtx);
+            temp=instance.load(std::memory_order_relaxed);
+            if(temp==nullptr){
+                temp=new Singleton();
+                instance.store(temp,std::memory_order_release);
+                atexit(distructor);
+            }
+        }
+        return temp;
+    }
+
+    void print(){
+        cout<<this<<endl;
+    }
+};
+
+std::atomic<Singleton*>Singleton::instance{nullptr};
+std::mutex Singleton::mtx;
+
+#endif
+
+
+
+int main(){
+
+    Singleton::GetInstance()->print();    
+    Singletion::GetInstance().print();
+    return 0;
+}
 

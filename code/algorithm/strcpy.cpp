@@ -1,5 +1,7 @@
 //手撕字符转拷贝:
 //https://cloud.tencent.com/developer/article/1510222
+
+#if 0
 char *strcpy1(char *dest, const char *src) {
     if (!dest || !src)
         return NULL;
@@ -76,6 +78,38 @@ char* strstr(char *str1, char *str2) {
         s++;
     }
     return NULL;
+}
+#endif
+
+
+
+
+#include<iostream>
+#include<stdlib.h>
+#include<cstring>
+using namespace std;
+int main(){
+    struct element{
+        int key;
+        int value;
+    };
+    element e{1,2};
+    char buffer[8]={0};
+    cout<<e.key<<" "<<e.value<<endl;
+    //strcpy(buffer,"1234567890");
+    //strcpy(buffer,"12\034567891112131431212121211111111121211222122222222");
+    memcpy(buffer,"12\034567891112131431212121211111111121211222122222222",10);
+    //strcpy_s(buffer,sizeof(buffer),"1234567890");//linux不支持这个api
+    cout<<e.key<<" "<<e.value<<endl;
+    cout<<buffer<<endl;
+
+
+    char buffer1[100]={'a','b','c','d','e','f','g','h'};
+    memcpy(buffer1+20,buffer1,10);
+    for(int i=0;i<100;i++){
+        cout<<buffer1[i]<<endl;
+    }
+    cout<<buffer1<<endl;
 }
 
 
