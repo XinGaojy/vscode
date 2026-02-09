@@ -1,0 +1,13 @@
+prefix=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zlib_ep-install
+exec_prefix=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zlib_ep-install
+libdir=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zlib_ep-install/lib
+sharedlibdir=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zlib_ep-install/lib
+includedir=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zlib_ep-install/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.3.1
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

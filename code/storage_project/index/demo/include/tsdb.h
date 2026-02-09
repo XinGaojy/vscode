@@ -43,7 +43,7 @@ class Builder {
 
   struct BuildOptions {
     int64_t partition_seconds = 3600;
-    PointsFormat format = PointsFormat::kOrc;
+    PointsFormat format = PointsFormat::kBinary;
     std::vector<int64_t> rollup_seconds;
   };
 
@@ -54,6 +54,7 @@ class Builder {
 };
 
 bool Ingest(const std::string& input_path, const std::string& out_dir, std::string* err);
+bool Merge(const std::string& out_dir, std::string* err);
 
 class DB {
  public:

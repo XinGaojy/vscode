@@ -1,0 +1,49 @@
+Consolidate compiler generated dependencies of target libzstd_shared
+[ 37%] Built target libzstd_shared
+Consolidate compiler generated dependencies of target libzstd_static
+[ 75%] Built target libzstd_static
+Consolidate compiler generated dependencies of target zstd
+[ 87%] Built target zstd
+[ 88%] Creating zstdcat symlink
+[ 88%] Built target zstdcat
+[ 88%] Creating unzstd symlink
+[ 88%] Built target unzstd
+[ 89%] Copying manpage zstd.1
+[ 89%] Built target zstd.1
+[ 90%] Copying manpage zstdgrep.1
+[ 90%] Built target zstdgrep.1
+[ 91%] Copying manpage zstdless.1
+[ 91%] Built target zstdless.1
+[ 92%] Creating zstdcat.1 symlink
+[ 92%] Built target zstdcat.1
+[ 93%] Creating unzstd.1 symlink
+[ 93%] Built target unzstd.1
+Consolidate compiler generated dependencies of target zstd-frugal
+[ 99%] Built target zstd-frugal
+[100%] Creating zstdmt symlink
+[100%] Built target zstdmt
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/cmake/zstd/zstdTargets.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/cmake/zstd/zstdTargets-release.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/cmake/zstd/zstdConfig.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/cmake/zstd/zstdConfigVersion.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/pkgconfig/libzstd.pc
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/include/zdict.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/include/zstd.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/include/zstd_errors.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/libzstd.so.1.5.7
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/libzstd.so.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/libzstd.so
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/lib/libzstd.a
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/bin/zstd
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/bin/zstdcat
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/bin/unzstd
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/bin/zstdgrep
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/bin/zstdless
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/share/man/man1/zstd.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/share/man/man1/zstdcat.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/share/man/man1/unzstd.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/share/man/man1/zstdgrep.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/share/man/man1/zstdless.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zstd_ep-install/bin/zstdmt

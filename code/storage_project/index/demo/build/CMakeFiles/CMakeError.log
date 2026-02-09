@@ -1,0 +1,24 @@
+Performing C++ SOURCE FILE Test NEEDS_Z_PREFIX failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b92c6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b92c6.dir/build.make CMakeFiles/cmTC_b92c6.dir/build
+gmake[1]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b92c6.dir/src.cxx.o
+/usr/bin/c++ -DNEEDS_Z_PREFIX -isystem /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zlib_ep-install/include -std=c++17 -Wall -Wextra -std=c++17 -Wall -Wextra  -std=gnu++17 -o CMakeFiles/cmTC_b92c6.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/CMakeTmp/src.cxx
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/CMakeTmp/src.cxx:3:13: fatal error: zlib.h: No such file or directory
+    3 |     #include<zlib.h>
+      |             ^~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_b92c6.dir/build.make:78: CMakeFiles/cmTC_b92c6.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b92c6/fast] Error 2
+
+
+Source file was:
+
+    #define Z_PREFIX
+    #include<zlib.h>
+    z_stream strm;
+    int main(int, char *[]) {
+        deflateReset(&strm);
+    }

@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+eb0101fc9f6b63afbd33c4ed9b2405ca /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep/src/google/protobuf/compiler/js/well_known_types_embed.cc

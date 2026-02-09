@@ -1,0 +1,14 @@
+-- Downloading...
+   dst='/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/snappy_ep-prefix/src/1.2.2.tar.gz'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/google/snappy/archive/1.2.2.tar.gz'
+-- Downloading... done
+-- extracting...
+     src='/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/snappy_ep-prefix/src/1.2.2.tar.gz'
+     dst='/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/snappy_ep-prefix/src/snappy_ep'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done

@@ -1,0 +1,8 @@
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/lib/libz.so.1.3.1
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/lib/libz.so.1
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/lib/libz.so
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/lib/libz.a
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/include/zconf.h
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/include/zlib.h
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/share/man/man3/zlib.3
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/c++/libs/thirdparty/zlib_ep-install/share/pkgconfig/zlib.pc

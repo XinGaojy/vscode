@@ -1,0 +1,26 @@
+[35m[1mConsolidate compiler generated dependencies of target lz4_static[0m
+[ 28%] Built target lz4_static
+[35m[1mConsolidate compiler generated dependencies of target lz4cli[0m
+[ 90%] Built target lz4cli
+[ 95%] [34m[1mCreating symlink for lz4cat[0m
+[ 95%] Built target create_lz4cat_symlink
+[100%] [34m[1mCreating symlink for unlz4[0m
+[100%] Built target create_unlz4_symlink
+[36mInstall the project...[0m
+-- Install configuration: ""
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/bin/lz4
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/lib/liblz4.a
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/include/lz4.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/include/lz4hc.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/include/lz4frame.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/include/lz4file.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/share/man/man1/lz4.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/lib/pkgconfig/liblz4.pc
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/lib/cmake/lz4/lz4Targets.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/lib/cmake/lz4/lz4Targets-noconfig.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/lib/cmake/lz4/lz4Config.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/lib/cmake/lz4/lz4ConfigVersion.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/bin/lz4cat
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/bin/unlz4
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/share/man/man1/lz4cat.1
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/lz4_ep-install/share/man/man1/unlz4.1

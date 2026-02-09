@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/CMakeFiles/orc-format_ep"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/CMakeFiles/orc-format_ep.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/CMakeFiles/orc-format_ep-complete.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-build.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-configure.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-download.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-install.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-mkdir.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-patch.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-test.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"orc-format_ep"
+		],
+		"name" : "orc-format_ep"
+	}
+}

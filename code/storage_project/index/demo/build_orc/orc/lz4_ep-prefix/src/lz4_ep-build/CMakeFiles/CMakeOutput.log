@@ -1,0 +1,410 @@
+The system is: Linux - 4.4.0-19041-Microsoft - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f5f54/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_f5f54.dir/build.make CMakeFiles/cmTC_f5f54.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04.2' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.2) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5f54.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_f5f54.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccH3SS1T.s
+GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.2) version 11.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.2) version 11.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 4011c2103cba78949d7e02d0f0047a3d
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5f54.dir/'
+ as -v --64 -o CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o /tmp/ccH3SS1T.s
+GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_f5f54
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5f54.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o -o cmTC_f5f54 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04.2' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.2) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5f54' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f5f54.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYHjNBK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f5f54 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5f54' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f5f54.'
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/11/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/11/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/11/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/11/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f5f54/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_f5f54.dir/build.make CMakeFiles/cmTC_f5f54.dir/build]
+  ignore line: [gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04.2' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.2) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5f54.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_f5f54.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccH3SS1T.s]
+  ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.2) version 11.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Ubuntu 11.4.0-1ubuntu1~22.04.2) version 11.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 4011c2103cba78949d7e02d0f0047a3d]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5f54.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o /tmp/ccH3SS1T.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_f5f54]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5f54.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o -o cmTC_f5f54 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04.2' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-11-2Y5pKs/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.2) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5f54' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f5f54.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYHjNBK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f5f54 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccYHjNBK.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f5f54] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
+    arg [CMakeFiles/cmTC_f5f54.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+  collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test CFLAG_pedantic_errors succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_52cb2/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_52cb2.dir/build.make CMakeFiles/cmTC_52cb2.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_52cb2.dir/src.c.o
+/usr/bin/cc -DCFLAG_pedantic_errors  -pedantic-errors -o CMakeFiles/cmTC_52cb2.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_52cb2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52cb2.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_52cb2.dir/src.c.o -o cmTC_52cb2 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wall succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_04f6e/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_04f6e.dir/build.make CMakeFiles/cmTC_04f6e.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04f6e.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wall  -Wall -o CMakeFiles/cmTC_04f6e.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_04f6e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04f6e.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_04f6e.dir/src.c.o -o cmTC_04f6e 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wextra succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b9806/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_b9806.dir/build.make CMakeFiles/cmTC_b9806.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9806.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wextra  -Wextra -o CMakeFiles/cmTC_b9806.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b9806
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9806.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_b9806.dir/src.c.o -o cmTC_b9806 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wundef succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7bc6c/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_7bc6c.dir/build.make CMakeFiles/cmTC_7bc6c.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7bc6c.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wundef  -Wundef -o CMakeFiles/cmTC_7bc6c.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_7bc6c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bc6c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_7bc6c.dir/src.c.o -o cmTC_7bc6c 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wcast_qual succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_42678/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_42678.dir/build.make CMakeFiles/cmTC_42678.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42678.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wcast_qual  -Wcast-qual -o CMakeFiles/cmTC_42678.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_42678
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42678.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_42678.dir/src.c.o -o cmTC_42678 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wcast_align succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3cf18/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_3cf18.dir/build.make CMakeFiles/cmTC_3cf18.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3cf18.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wcast_align  -Wcast-align -o CMakeFiles/cmTC_3cf18.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3cf18
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cf18.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3cf18.dir/src.c.o -o cmTC_3cf18 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wshadow succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3333a/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_3333a.dir/build.make CMakeFiles/cmTC_3333a.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3333a.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wshadow  -Wshadow -o CMakeFiles/cmTC_3333a.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3333a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3333a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3333a.dir/src.c.o -o cmTC_3333a 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wswitch_enum succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1fbd3/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_1fbd3.dir/build.make CMakeFiles/cmTC_1fbd3.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1fbd3.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wswitch_enum  -Wswitch-enum -o CMakeFiles/cmTC_1fbd3.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1fbd3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fbd3.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_1fbd3.dir/src.c.o -o cmTC_1fbd3 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wdeclaration_after_statement succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c97a9/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_c97a9.dir/build.make CMakeFiles/cmTC_c97a9.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c97a9.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wdeclaration_after_statement  -Wdeclaration-after-statement -o CMakeFiles/cmTC_c97a9.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c97a9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c97a9.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c97a9.dir/src.c.o -o cmTC_c97a9 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wstrict_prototypes succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4fbb6/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_4fbb6.dir/build.make CMakeFiles/cmTC_4fbb6.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4fbb6.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wstrict_prototypes  -Wstrict-prototypes -o CMakeFiles/cmTC_4fbb6.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4fbb6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4fbb6.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4fbb6.dir/src.c.o -o cmTC_4fbb6 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CFLAG_Wpointer_arith succeeded with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f8177/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_f8177.dir/build.make CMakeFiles/cmTC_f8177.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f8177.dir/src.c.o
+/usr/bin/cc -DCFLAG_Wpointer_arith  -Wpointer-arith -o CMakeFiles/cmTC_f8177.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f8177
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8177.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_f8177.dir/src.c.o -o cmTC_f8177 
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }

@@ -1,0 +1,33 @@
+name: Build and test
+
+on:
+  push:
+    branches:
+    - branch-1.1
+  pull_request:
+    branches:
+    - branch-1.1
+
+jobs:
+  build:
+    if: github.repository == 'apache/orc-format'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: actions/setup-java@v4
+      with:
+        distribution: zulu
+        java-version: 17
+
+    - uses: bufbuild/buf-setup-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: bufbuild/buf-lint-action@v1
+      with:
+        input: "src/main/proto"
+
+    - name: Install
+      run: |
+        ./mvnw install

@@ -1,0 +1,272 @@
+Determining if the include file windows.h exists failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_327cd/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_327cd.dir/build.make CMakeFiles/cmTC_327cd.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_327cd.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_327cd.dir/CheckIncludeFile.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: windows.h: No such file or directory
+    1 | #include <windows.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[4]: *** [CMakeFiles/cmTC_327cd.dir/build.make:78: CMakeFiles/cmTC_327cd.dir/CheckIncludeFile.c.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_327cd/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function zlibVersion exists in the z failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2a6ac/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_2a6ac.dir/build.make CMakeFiles/cmTC_2a6ac.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a6ac.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=zlibVersion -o CMakeFiles/cmTC_2a6ac.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2a6ac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a6ac.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=zlibVersion CMakeFiles/cmTC_2a6ac.dir/CheckFunctionExists.c.o -o cmTC_2a6ac  -lz 
+/usr/bin/ld: cannot find -lz: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[4]: *** [CMakeFiles/cmTC_2a6ac.dir/build.make:99: cmTC_2a6ac] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_2a6ac/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function lzo1x_1_15_compress exists in the lzo2 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6b690/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_6b690.dir/build.make CMakeFiles/cmTC_6b690.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6b690.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=lzo1x_1_15_compress -o CMakeFiles/cmTC_6b690.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6b690
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b690.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=lzo1x_1_15_compress CMakeFiles/cmTC_6b690.dir/CheckFunctionExists.c.o -o cmTC_6b690  -llzo2 
+/usr/bin/ld: cannot find -llzo2: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[4]: *** [CMakeFiles/cmTC_6b690.dir/build.make:99: cmTC_6b690] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_6b690/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function LZ4_compress_default exists in the lz4 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_77dbf/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_77dbf.dir/build.make CMakeFiles/cmTC_77dbf.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77dbf.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=LZ4_compress_default -o CMakeFiles/cmTC_77dbf.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_77dbf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77dbf.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=LZ4_compress_default CMakeFiles/cmTC_77dbf.dir/CheckFunctionExists.c.o -o cmTC_77dbf  -llz4 
+/usr/bin/ld: cannot find -llz4: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[4]: *** [CMakeFiles/cmTC_77dbf.dir/build.make:99: cmTC_77dbf] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_77dbf/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C++ SOURCE FILE Test HAVE_VISUAL_STUDIO_ARCH_AVX failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_54899/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_54899.dir/build.make CMakeFiles/cmTC_54899.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_54899.dir/src.cxx.o
+/usr/bin/c++ -DHAVE_VISUAL_STUDIO_ARCH_AVX  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti    /arch:AVX -std=c++11 -o CMakeFiles/cmTC_54899.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+c++: warning: /arch:AVX: linker input file unused because linking not done
+c++: error: /arch:AVX: linker input file not found: No such file or directory
+gmake[4]: *** [CMakeFiles/cmTC_54899.dir/build.make:78: CMakeFiles/cmTC_54899.dir/src.cxx.o] Error 1
+gmake[4]: *** Deleting file 'CMakeFiles/cmTC_54899.dir/src.cxx.o'
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_54899/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_VISUAL_STUDIO_ARCH_AVX2 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7a65c/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_7a65c.dir/build.make CMakeFiles/cmTC_7a65c.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7a65c.dir/src.cxx.o
+/usr/bin/c++ -DHAVE_VISUAL_STUDIO_ARCH_AVX2  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti    /arch:AVX2 -std=c++11 -o CMakeFiles/cmTC_7a65c.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+c++: warning: /arch:AVX2: linker input file unused because linking not done
+c++: error: /arch:AVX2: linker input file not found: No such file or directory
+gmake[4]: *** [CMakeFiles/cmTC_7a65c.dir/build.make:78: CMakeFiles/cmTC_7a65c.dir/src.cxx.o] Error 1
+gmake[4]: *** Deleting file 'CMakeFiles/cmTC_7a65c.dir/src.cxx.o'
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_7a65c/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test SNAPPY_HAVE_SSSE3 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_251b6/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_251b6.dir/build.make CMakeFiles/cmTC_251b6.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_251b6.dir/src.cxx.o
+/usr/bin/c++ -DSNAPPY_HAVE_SSSE3  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti  -std=c++11 -o CMakeFiles/cmTC_251b6.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+In file included from /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h: In function ‘int main()’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h:136:1: error: inlining failed in call to ‘always_inline’ ‘__m128i _mm_shuffle_epi8(__m128i, __m128i)’: target specific option mismatch
+  136 | _mm_shuffle_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:8:43: note: called from here
+    8 |   const __m128i pattern = _mm_shuffle_epi8(_mm_loadl_epi64(src), shuffle_mask);
+      |                           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h:136:1: error: inlining failed in call to ‘always_inline’ ‘__m128i _mm_shuffle_epi8(__m128i, __m128i)’: target specific option mismatch
+  136 | _mm_shuffle_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:8:43: note: called from here
+    8 |   const __m128i pattern = _mm_shuffle_epi8(_mm_loadl_epi64(src), shuffle_mask);
+      |                           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmake[4]: *** [CMakeFiles/cmTC_251b6.dir/build.make:78: CMakeFiles/cmTC_251b6.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_251b6/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <tmmintrin.h>
+
+int main() {
+  const __m128i *src = 0;
+  __m128i dest;
+  const __m128i shuffle_mask = _mm_load_si128(src);
+  const __m128i pattern = _mm_shuffle_epi8(_mm_loadl_epi64(src), shuffle_mask);
+  _mm_storeu_si128(&dest, pattern);
+  return 0;
+}
+Performing C++ SOURCE FILE Test SNAPPY_HAVE_X86_CRC32 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_db708/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_db708.dir/build.make CMakeFiles/cmTC_db708.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_db708.dir/src.cxx.o
+/usr/bin/c++ -DSNAPPY_HAVE_X86_CRC32  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti  -std=c++11 -o CMakeFiles/cmTC_db708.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:39,
+                 from /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h: In function ‘int main()’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:840:1: error: inlining failed in call to ‘always_inline’ ‘unsigned int _mm_crc32_u32(unsigned int, unsigned int)’: target specific option mismatch
+  840 | _mm_crc32_u32 (unsigned int __C, unsigned int __V)
+      | ^~~~~~~~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:4:23: note: called from here
+    4 |   return _mm_crc32_u32(0, 1);
+      |          ~~~~~~~~~~~~~^~~~~~
+gmake[4]: *** [CMakeFiles/cmTC_db708.dir/build.make:78: CMakeFiles/cmTC_db708.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_db708/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <immintrin.h>
+int main() {
+  return _mm_crc32_u32(0, 1);
+}
+Performing C++ SOURCE FILE Test SNAPPY_HAVE_NEON_CRC32 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_07366/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_07366.dir/build.make CMakeFiles/cmTC_07366.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_07366.dir/src.cxx.o
+/usr/bin/c++ -DSNAPPY_HAVE_NEON_CRC32  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti  -std=c++11 -o CMakeFiles/cmTC_07366.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: arm_neon.h: No such file or directory
+    2 | #include <arm_neon.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+gmake[4]: *** [CMakeFiles/cmTC_07366.dir/build.make:78: CMakeFiles/cmTC_07366.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_07366/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <arm_neon.h>
+#include <arm_acle.h>
+int main() {
+  return __crc32cw(0, 1);
+}
+Performing C++ SOURCE FILE Test SNAPPY_HAVE_BMI2 failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0c840/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_0c840.dir/build.make CMakeFiles/cmTC_0c840.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0c840.dir/src.cxx.o
+/usr/bin/c++ -DSNAPPY_HAVE_BMI2  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti  -std=c++11 -o CMakeFiles/cmTC_0c840.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h:43,
+                 from /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:27,
+                 from /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:2:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/bmi2intrin.h: In function ‘int main()’:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/bmi2intrin.h:39:1: error: inlining failed in call to ‘always_inline’ ‘unsigned int _bzhi_u32(unsigned int, unsigned int)’: target specific option mismatch
+   39 | _bzhi_u32 (unsigned int __X, unsigned int __Y)
+      | ^~~~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:4:19: note: called from here
+    4 |   return _bzhi_u32(0, 1);
+      |          ~~~~~~~~~^~~~~~
+gmake[4]: *** [CMakeFiles/cmTC_0c840.dir/build.make:78: CMakeFiles/cmTC_0c840.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_0c840/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <immintrin.h>
+int main() {
+  return _bzhi_u32(0, 1);
+}
+Performing C++ SOURCE FILE Test SNAPPY_HAVE_NEON failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a1e8f/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a1e8f.dir/build.make CMakeFiles/cmTC_a1e8f.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a1e8f.dir/src.cxx.o
+/usr/bin/c++ -DSNAPPY_HAVE_NEON  -Wall -Wextra -Wno-sign-compare -fno-exceptions -fno-rtti  -std=c++11 -o CMakeFiles/cmTC_a1e8f.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: arm_neon.h: No such file or directory
+    2 | #include <arm_neon.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+gmake[4]: *** [CMakeFiles/cmTC_a1e8f.dir/build.make:78: CMakeFiles/cmTC_a1e8f.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_a1e8f/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/snappy_ep-prefix/src/snappy_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <arm_neon.h>
+#include <stdint.h>
+int main() {
+  uint8_t val = 3, dup[8];
+  uint8x16_t v1 = vld1q_dup_u8(&val);
+  uint8x16_t v2 = vqtbl1q_u8(v1, v1);
+  vst1q_u8(dup, v1);
+  vst1q_u8(dup, v2);
+  return 0;
+}

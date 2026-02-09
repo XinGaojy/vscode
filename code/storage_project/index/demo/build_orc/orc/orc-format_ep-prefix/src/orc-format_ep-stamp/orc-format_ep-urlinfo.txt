@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://www.apache.org/dyn/closer.lua/orc/orc-format-1.1.1/orc-format-1.1.1.tar.gz?action=download'
+tag='SHA256=584dfe2a4202946178fd8fc7d1239be7805b9ed4596ab2042dee739e7880992b'

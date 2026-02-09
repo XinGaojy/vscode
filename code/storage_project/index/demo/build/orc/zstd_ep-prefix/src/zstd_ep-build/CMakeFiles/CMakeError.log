@@ -1,0 +1,34 @@
+Performing C SOURCE FILE Test C_FLAG_QUNUSED_ARGUMENTS failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0c83e/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_0c83e.dir/build.make CMakeFiles/cmTC_0c83e.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c83e.dir/src.c.o
+/usr/bin/cc -DC_FLAG_QUNUSED_ARGUMENTS  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual -Wstrict-prototypes    -Qunused-arguments -o CMakeFiles/cmTC_0c83e.dir/src.c.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command-line option '-Qunused-arguments'
+gmake[4]: *** [CMakeFiles/cmTC_0c83e.dir/build.make:78: CMakeFiles/cmTC_0c83e.dir/src.c.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_0c83e/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test CXX_FLAG_QUNUSED_ARGUMENTS failed with the following output:
+Change Dir: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2d4f5/fast && gmake[3]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_2d4f5.dir/build.make CMakeFiles/cmTC_2d4f5.dir/build
+gmake[4]: Entering directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2d4f5.dir/src.cxx.o
+/usr/bin/c++ -DCXX_FLAG_QUNUSED_ARGUMENTS  -Wall -Wextra -Wundef -Wshadow -Wcast-align -Wcast-qual    -Qunused-arguments -o CMakeFiles/cmTC_2d4f5.dir/src.cxx.o -c /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-Qunused-arguments'
+gmake[4]: *** [CMakeFiles/cmTC_2d4f5.dir/build.make:78: CMakeFiles/cmTC_2d4f5.dir/src.cxx.o] Error 1
+gmake[4]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+gmake[3]: *** [Makefile:127: cmTC_2d4f5/fast] Error 2
+gmake[3]: Leaving directory '/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main() { return 0; }

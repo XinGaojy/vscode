@@ -1,0 +1,32 @@
+-- Creating build script for LZ4 version: 1.10.0
+-- The C compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test CFLAG_pedantic_errors
+-- Performing Test CFLAG_pedantic_errors - Success
+-- Performing Test CFLAG_Wall
+-- Performing Test CFLAG_Wall - Success
+-- Performing Test CFLAG_Wextra
+-- Performing Test CFLAG_Wextra - Success
+-- Performing Test CFLAG_Wundef
+-- Performing Test CFLAG_Wundef - Success
+-- Performing Test CFLAG_Wcast_qual
+-- Performing Test CFLAG_Wcast_qual - Success
+-- Performing Test CFLAG_Wcast_align
+-- Performing Test CFLAG_Wcast_align - Success
+-- Performing Test CFLAG_Wshadow
+-- Performing Test CFLAG_Wshadow - Success
+-- Performing Test CFLAG_Wswitch_enum
+-- Performing Test CFLAG_Wswitch_enum - Success
+-- Performing Test CFLAG_Wdeclaration_after_statement
+-- Performing Test CFLAG_Wdeclaration_after_statement - Success
+-- Performing Test CFLAG_Wstrict_prototypes
+-- Performing Test CFLAG_Wstrict_prototypes - Success
+-- Performing Test CFLAG_Wpointer_arith
+-- Performing Test CFLAG_Wpointer_arith - Success
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep-build

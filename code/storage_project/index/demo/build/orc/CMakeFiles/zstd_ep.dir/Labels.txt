@@ -1,0 +1,13 @@
+# Target labels
+ zstd_ep
+# Source files and their labels
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/zstd_ep
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/zstd_ep.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/zstd_ep-complete.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-build.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-configure.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-download.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-install.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-mkdir.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-patch.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zstd_ep-prefix/src/zstd_ep-stamp/zstd_ep-update.rule

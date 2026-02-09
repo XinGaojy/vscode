@@ -65,6 +65,26 @@ CMAKE_BINARY_DIR = /workspace/linux/clang-quickstart/vscode/code/storage_project
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -84,6 +104,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -141,6 +206,97 @@ tsdb_gen: cmake_check_build_system
 tsdb_gen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_gen.dir/build.make CMakeFiles/tsdb_gen.dir/build
 .PHONY : tsdb_gen/fast
+
+#=============================================================================
+# Target rules for targets named orc-format_ep
+
+# Build rule for target.
+orc-format_ep: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 orc-format_ep
+.PHONY : orc-format_ep
+
+# fast build rule for target.
+orc-format_ep/fast:
+	$(MAKE) $(MAKESILENT) -f orc/CMakeFiles/orc-format_ep.dir/build.make orc/CMakeFiles/orc-format_ep.dir/build
+.PHONY : orc-format_ep/fast
+
+#=============================================================================
+# Target rules for targets named snappy_ep
+
+# Build rule for target.
+snappy_ep: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 snappy_ep
+.PHONY : snappy_ep
+
+# fast build rule for target.
+snappy_ep/fast:
+	$(MAKE) $(MAKESILENT) -f orc/CMakeFiles/snappy_ep.dir/build.make orc/CMakeFiles/snappy_ep.dir/build
+.PHONY : snappy_ep/fast
+
+#=============================================================================
+# Target rules for targets named zlib_ep
+
+# Build rule for target.
+zlib_ep: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zlib_ep
+.PHONY : zlib_ep
+
+# fast build rule for target.
+zlib_ep/fast:
+	$(MAKE) $(MAKESILENT) -f orc/CMakeFiles/zlib_ep.dir/build.make orc/CMakeFiles/zlib_ep.dir/build
+.PHONY : zlib_ep/fast
+
+#=============================================================================
+# Target rules for targets named zstd_ep
+
+# Build rule for target.
+zstd_ep: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zstd_ep
+.PHONY : zstd_ep
+
+# fast build rule for target.
+zstd_ep/fast:
+	$(MAKE) $(MAKESILENT) -f orc/CMakeFiles/zstd_ep.dir/build.make orc/CMakeFiles/zstd_ep.dir/build
+.PHONY : zstd_ep/fast
+
+#=============================================================================
+# Target rules for targets named lz4_ep
+
+# Build rule for target.
+lz4_ep: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lz4_ep
+.PHONY : lz4_ep
+
+# fast build rule for target.
+lz4_ep/fast:
+	$(MAKE) $(MAKESILENT) -f orc/CMakeFiles/lz4_ep.dir/build.make orc/CMakeFiles/lz4_ep.dir/build
+.PHONY : lz4_ep/fast
+
+#=============================================================================
+# Target rules for targets named protobuf_ep
+
+# Build rule for target.
+protobuf_ep: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protobuf_ep
+.PHONY : protobuf_ep
+
+# fast build rule for target.
+protobuf_ep/fast:
+	$(MAKE) $(MAKESILENT) -f orc/CMakeFiles/protobuf_ep.dir/build.make orc/CMakeFiles/protobuf_ep.dir/build
+.PHONY : protobuf_ep/fast
+
+#=============================================================================
+# Target rules for targets named orc
+
+# Build rule for target.
+orc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 orc
+.PHONY : orc
+
+# fast build rule for target.
+orc/fast:
+	$(MAKE) $(MAKESILENT) -f orc/c++/src/CMakeFiles/orc.dir/build.make orc/c++/src/CMakeFiles/orc.dir/build
+.PHONY : orc/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -221,7 +377,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... lz4_ep"
+	@echo "... orc-format_ep"
+	@echo "... protobuf_ep"
+	@echo "... snappy_ep"
+	@echo "... zlib_ep"
+	@echo "... zstd_ep"
+	@echo "... orc"
 	@echo "... tsdb"
 	@echo "... tsdb_gen"
 	@echo "... src/main.o"

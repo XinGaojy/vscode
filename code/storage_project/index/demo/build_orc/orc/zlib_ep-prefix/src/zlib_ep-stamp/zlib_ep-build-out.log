@@ -1,0 +1,46 @@
+[  2%] Building C object CMakeFiles/zlib.dir/adler32.c.o
+[  5%] Building C object CMakeFiles/zlib.dir/compress.c.o
+[  7%] Building C object CMakeFiles/zlib.dir/crc32.c.o
+[ 10%] Building C object CMakeFiles/zlib.dir/deflate.c.o
+[ 12%] Building C object CMakeFiles/zlib.dir/gzclose.c.o
+[ 15%] Building C object CMakeFiles/zlib.dir/gzlib.c.o
+[ 17%] Building C object CMakeFiles/zlib.dir/gzread.c.o
+[ 20%] Building C object CMakeFiles/zlib.dir/gzwrite.c.o
+[ 22%] Building C object CMakeFiles/zlib.dir/inflate.c.o
+[ 25%] Building C object CMakeFiles/zlib.dir/infback.c.o
+[ 27%] Building C object CMakeFiles/zlib.dir/inftrees.c.o
+[ 30%] Building C object CMakeFiles/zlib.dir/inffast.c.o
+[ 32%] Building C object CMakeFiles/zlib.dir/trees.c.o
+[ 35%] Building C object CMakeFiles/zlib.dir/uncompr.c.o
+[ 37%] Building C object CMakeFiles/zlib.dir/zutil.c.o
+[ 40%] Linking C shared library libz.so
+[ 40%] Built target zlib
+[ 42%] Building C object CMakeFiles/zlibstatic.dir/adler32.c.o
+[ 45%] Building C object CMakeFiles/zlibstatic.dir/compress.c.o
+[ 47%] Building C object CMakeFiles/zlibstatic.dir/crc32.c.o
+[ 50%] Building C object CMakeFiles/zlibstatic.dir/deflate.c.o
+[ 52%] Building C object CMakeFiles/zlibstatic.dir/gzclose.c.o
+[ 55%] Building C object CMakeFiles/zlibstatic.dir/gzlib.c.o
+[ 57%] Building C object CMakeFiles/zlibstatic.dir/gzread.c.o
+[ 60%] Building C object CMakeFiles/zlibstatic.dir/gzwrite.c.o
+[ 62%] Building C object CMakeFiles/zlibstatic.dir/inflate.c.o
+[ 65%] Building C object CMakeFiles/zlibstatic.dir/infback.c.o
+[ 67%] Building C object CMakeFiles/zlibstatic.dir/inftrees.c.o
+[ 70%] Building C object CMakeFiles/zlibstatic.dir/inffast.c.o
+[ 72%] Building C object CMakeFiles/zlibstatic.dir/trees.c.o
+[ 75%] Building C object CMakeFiles/zlibstatic.dir/uncompr.c.o
+[ 77%] Building C object CMakeFiles/zlibstatic.dir/zutil.c.o
+[ 80%] Linking C static library libz.a
+[ 80%] Built target zlibstatic
+[ 82%] Building C object CMakeFiles/example.dir/test/example.c.o
+[ 85%] Linking C executable example
+[ 85%] Built target example
+[ 87%] Building C object CMakeFiles/minigzip.dir/test/minigzip.c.o
+[ 90%] Linking C executable minigzip
+[ 90%] Built target minigzip
+[ 92%] Building C object CMakeFiles/example64.dir/test/example.c.o
+[ 95%] Linking C executable example64
+[ 95%] Built target example64
+[ 97%] Building C object CMakeFiles/minigzip64.dir/test/minigzip.c.o
+[100%] Linking C executable minigzip64
+[100%] Built target minigzip64

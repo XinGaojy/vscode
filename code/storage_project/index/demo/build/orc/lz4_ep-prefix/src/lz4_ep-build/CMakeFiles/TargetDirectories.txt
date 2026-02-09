@@ -1,0 +1,12 @@
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/lz4_static.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/lz4cli.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/create_lz4cat_symlink.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/create_unlz4_symlink.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/package.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/package_source.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/edit_cache.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/rebuild_cache.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/list_install_components.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/install.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/install/local.dir
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/lz4_ep-prefix/src/lz4_ep-build/CMakeFiles/install/strip.dir

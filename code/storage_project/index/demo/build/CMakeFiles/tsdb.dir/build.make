@@ -108,6 +108,12 @@ tsdb_EXTERNAL_OBJECTS =
 tsdb: CMakeFiles/tsdb.dir/src/main.cpp.o
 tsdb: CMakeFiles/tsdb.dir/src/tsdb.cpp.o
 tsdb: CMakeFiles/tsdb.dir/build.make
+tsdb: orc/c++/src/liborc.a
+tsdb: orc/c++/libs/thirdparty/protobuf_ep-install/lib/libprotobuf.a
+tsdb: orc/c++/libs/thirdparty/zlib_ep-install/lib/libz.a
+tsdb: orc/c++/libs/thirdparty/snappy_ep-install/lib/libsnappy.a
+tsdb: orc/c++/libs/thirdparty/lz4_ep-install/lib/liblz4.a
+tsdb: orc/c++/libs/thirdparty/zstd_ep-install/lib/libzstd.a
 tsdb: CMakeFiles/tsdb.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tsdb"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tsdb.dir/link.txt --verbose=$(VERBOSE)

@@ -1,0 +1,25 @@
+[  4%] Building C object CMakeFiles/lz4_static.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4.c.o
+[  9%] Building C object CMakeFiles/lz4_static.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4file.c.o
+[ 14%] Building C object CMakeFiles/lz4_static.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4frame.c.o
+[ 19%] Building C object CMakeFiles/lz4_static.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4hc.c.o
+[ 23%] Building C object CMakeFiles/lz4_static.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/xxhash.c.o
+[ 28%] Linking C static library liblz4.a
+[ 28%] Built target lz4_static
+[ 33%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/bench.c.o
+[ 38%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/lorem.c.o
+[ 42%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/lz4cli.c.o
+[ 47%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/lz4io.c.o
+[ 52%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/threadpool.c.o
+[ 57%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/timefn.c.o
+[ 61%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/programs/util.c.o
+[ 66%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4.c.o
+[ 71%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4file.c.o
+[ 76%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4frame.c.o
+[ 80%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/lz4hc.c.o
+[ 85%] Building C object CMakeFiles/lz4cli.dir/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/lz4_ep-prefix/src/lz4_ep/lib/xxhash.c.o
+[ 90%] Linking C executable lz4
+[ 90%] Built target lz4cli
+[ 95%] Creating symlink for lz4cat
+[ 95%] Built target create_lz4cat_symlink
+[100%] Creating symlink for unlz4
+[100%] Built target create_unlz4_symlink

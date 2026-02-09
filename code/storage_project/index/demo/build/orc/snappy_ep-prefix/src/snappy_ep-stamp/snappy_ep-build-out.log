@@ -1,0 +1,6 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/snappy.dir/snappy-c.cc.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/snappy.dir/snappy-sinksource.cc.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/snappy.dir/snappy-stubs-internal.cc.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/snappy.dir/snappy.cc.o[0m
+[100%] [32m[1mLinking CXX static library libsnappy.a[0m
+[100%] Built target snappy

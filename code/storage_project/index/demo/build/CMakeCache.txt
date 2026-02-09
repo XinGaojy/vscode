@@ -14,6 +14,33 @@
 # EXTERNAL cache entries
 ########################
 
+//Run static analysis of the Java
+ANALYZE_JAVA:BOOL=OFF
+
+//Enable the metrics collection at compile phase
+BUILD_CPP_ENABLE_METRICS:BOOL=OFF
+
+//Build the googletest unit tests
+BUILD_CPP_TESTS:BOOL=OFF
+
+//Enable build with AVX512 at compile time
+BUILD_ENABLE_AVX512:BOOL=OFF
+
+//Include ORC Java library in the build process
+BUILD_JAVA:BOOL=OFF
+
+//Include LIBHDFSPP library in the build process
+BUILD_LIBHDFSPP:BOOL=OFF
+
+//Compile static libraries with position independent code
+BUILD_POSITION_INDEPENDENT_LIB:BOOL=OFF
+
+//Include sparsehash library in the build process
+BUILD_SPARSEHASH:BOOL=OFF
+
+//Build the tools
+BUILD_TOOLS:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -53,6 +80,32 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
+//C compiler
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+
+//A wrapper around 'ar' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-11
+
+//A wrapper around 'ranlib' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-11
+
+//Flags used by the C compiler during all build types.
+CMAKE_C_FLAGS:STRING=
+
+//Flags used by the C compiler during DEBUG builds.
+CMAKE_C_FLAGS_DEBUG:STRING=-g
+
+//Flags used by the C compiler during MINSIZEREL builds.
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the C compiler during RELEASE builds.
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+
+//Flags used by the C compiler during RELWITHDEBINFO builds.
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
@@ -74,8 +127,56 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Enable/Disable output of compile commands during generation.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -183,6 +284,87 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Enable to build RPM source packages
+CPACK_SOURCE_RPM:BOOL=OFF
+
+//Enable to build TBZ2 source packages
+CPACK_SOURCE_TBZ2:BOOL=ON
+
+//Enable to build TGZ source packages
+CPACK_SOURCE_TGZ:BOOL=ON
+
+//Enable to build TXZ source packages
+CPACK_SOURCE_TXZ:BOOL=ON
+
+//Enable to build TZ source packages
+CPACK_SOURCE_TZ:BOOL=ON
+
+//Enable to build ZIP source packages
+CPACK_SOURCE_ZIP:BOOL=OFF
+
+//Enable Address Sanitizer
+ENABLE_ASAN:BOOL=OFF
+
+//Enable Undefined Behavior Sanitizer
+ENABLE_UBSAN:BOOL=OFF
+
+//Install vendored thirdparty libraries along with liborc
+INSTALL_VENDORED_LIBS:BOOL=ON
+
+//Value Computed by CMake
+ORC_BINARY_DIR:STATIC=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc
+
+//Enable Clang tools
+ORC_ENABLE_CLANG_TOOLS:BOOL=OFF
+
+//Path to a file.
+ORC_INCLUDE_DIR:PATH=ORC_INCLUDE_DIR-NOTFOUND
+
+//Value Computed by CMake
+ORC_IS_TOP_LEVEL:STATIC=OFF
+
+//Path to a library.
+ORC_LIBRARY:FILEPATH=ORC_LIBRARY-NOTFOUND
+
+//Arbitrary string that identifies the kind of package
+ORC_PACKAGE_KIND:BOOL=OFF
+
+//Prefer static gmock library, if available
+ORC_PREFER_STATIC_GMOCK:BOOL=ON
+
+//Prefer static lz4 library, if available
+ORC_PREFER_STATIC_LZ4:BOOL=ON
+
+//Prefer static protobuf library, if available
+ORC_PREFER_STATIC_PROTOBUF:BOOL=ON
+
+//Prefer static snappy library, if available
+ORC_PREFER_STATIC_SNAPPY:BOOL=ON
+
+//Prefer static zlib library, if available
+ORC_PREFER_STATIC_ZLIB:BOOL=ON
+
+//Prefer static zstd library, if available
+ORC_PREFER_STATIC_ZSTD:BOOL=ON
+
+//Value Computed by CMake
+ORC_SOURCE_DIR:STATIC=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/third_party/orc
+
+//Fail the build on C++ warnings
+STOP_BUILD_ON_WARNING:BOOL=OFF
+
+//Run the test suite using valgrind --tool=memcheck
+TEST_VALGRIND_MEMCHECK:BOOL=OFF
+
+//Enable ORC points format support
+TSDB_ENABLE_ORC:BOOL=ON
+
+//Path to Apache ORC source tree
+TSDB_ORC_SOURCE_DIR:PATH=
+
+//Use bundled ORC source under third_party/orc
+TSDB_USE_BUNDLED_ORC:BOOL=ON
+
 //Value Computed by CMake
 tsdb_demo_BINARY_DIR:STATIC=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build
 
@@ -233,6 +415,22 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_AR
+CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
+CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS
+CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
+CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_MINSIZEREL
+CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELEASE
+CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
+CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Executable file format
@@ -266,8 +464,40 @@ CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -285,7 +515,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -328,6 +558,52 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_RPM
+CPACK_SOURCE_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TBZ2
+CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TGZ
+CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TXZ
+CPACK_SOURCE_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TZ
+CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_ZIP
+CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Test HAS_BUILTIN_OVERFLOW_CHECK
+HAS_BUILTIN_OVERFLOW_CHECK:INTERNAL=1
+//Test HAS_DIAGNOSTIC_PUSH
+HAS_DIAGNOSTIC_PUSH:INTERNAL=1
+//Test HAS_DOUBLE_TO_STRING
+HAS_DOUBLE_TO_STRING:INTERNAL=1
+//Test HAS_INT64_TO_STRING
+HAS_INT64_TO_STRING:INTERNAL=1
+//Test HAS_POST_2038
+HAS_POST_2038:INTERNAL=1
+//Result of TRY_COMPILE
+HAS_POST_2038_COMPILED:INTERNAL=TRUE
+//Result of TRY_RUN
+HAS_POST_2038_EXITCODE:INTERNAL=0
+//Test HAS_PREAD
+HAS_PREAD:INTERNAL=1
+//Test HAS_PRE_1970
+HAS_PRE_1970:INTERNAL=1
+//Result of TRY_COMPILE
+HAS_PRE_1970_COMPILED:INTERNAL=TRUE
+//Result of TRY_RUN
+HAS_PRE_1970_EXITCODE:INTERNAL=0
+//Test HAS_STD_ISNAN
+HAS_STD_ISNAN:INTERNAL=1
+//Test HAS_STRPTIME
+HAS_STRPTIME:INTERNAL=1
+//Test NEEDS_Z_PREFIX
+NEEDS_Z_PREFIX:INTERNAL=
+//Test ORC_CXX_HAS_CSTDINT
+ORC_CXX_HAS_CSTDINT:INTERNAL=1
+//Test ORC_CXX_HAS_THREAD_LOCAL
+ORC_CXX_HAS_THREAD_LOCAL:INTERNAL=1
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 

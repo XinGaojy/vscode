@@ -1,0 +1,54 @@
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c: In function ‘ZSTD_decompressSequences’:
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1830:17: warning: ‘dumps’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1830 |     const BYTE* dumps;
+      |                 ^~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1861:18: warning: ‘nbSeq’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1861 |             nbSeq--;
+      |             ~~~~~^~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1850:35: warning: ‘dumpsLength’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1850 |         seqState.dumpsEnd = dumps + dumpsLength;
+      |                             ~~~~~~^~~~~~~~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c: In function ‘ZSTD_decompressBlock’:
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1505:20: warning: ‘litbp.origSize’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1505 |             size_t rleSize = litbp.origSize;
+      |                    ^~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1489:23: note: ‘litbp.origSize’ was declared here
+ 1489 |     blockProperties_t litbp;
+      |                       ^~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1496:5: warning: ‘*(unsigned int *)((char *)&litbp + offsetof(blockProperties_t, blockType))’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1496 |     switch(litbp.blockType)
+      |     ^~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1489:23: note: ‘*(unsigned int *)((char *)&litbp + offsetof(blockProperties_t, blockType))’ was declared here
+ 1489 |     blockProperties_t litbp;
+      |                       ^~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c: In function ‘ZSTDv01_decompressDCtx’:
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1936:9: warning: ‘*(unsigned int *)((char *)&blockProperties + offsetof(blockProperties_t, blockType))’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1936 |         switch(blockProperties.blockType)
+      |         ^~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c: In function ‘ZSTD_decompressSequences’:
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1830:17: warning: ‘dumps’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1830 |     const BYTE* dumps;
+      |                 ^~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1861:18: warning: ‘nbSeq’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1861 |             nbSeq--;
+      |             ~~~~~^~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1850:35: warning: ‘dumpsLength’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1850 |         seqState.dumpsEnd = dumps + dumpsLength;
+      |                             ~~~~~~^~~~~~~~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c: In function ‘ZSTD_decompressBlock’:
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1505:20: warning: ‘litbp.origSize’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1505 |             size_t rleSize = litbp.origSize;
+      |                    ^~~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1489:23: note: ‘litbp.origSize’ was declared here
+ 1489 |     blockProperties_t litbp;
+      |                       ^~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1496:5: warning: ‘*(unsigned int *)((char *)&litbp + offsetof(blockProperties_t, blockType))’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1496 |     switch(litbp.blockType)
+      |     ^~~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1489:23: note: ‘*(unsigned int *)((char *)&litbp + offsetof(blockProperties_t, blockType))’ was declared here
+ 1489 |     blockProperties_t litbp;
+      |                       ^~~~~
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c: In function ‘ZSTDv01_decompressDCtx’:
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/zstd_ep-prefix/src/zstd_ep/lib/legacy/zstd_v01.c:1936:9: warning: ‘*(unsigned int *)((char *)&blockProperties + offsetof(blockProperties_t, blockType))’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1936 |         switch(blockProperties.blockType)
+      |         ^~~~~~

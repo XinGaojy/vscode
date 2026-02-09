@@ -12,8 +12,10 @@ const std::vector<std::string> kAllFields = {"min", "max", "avg", "sum", "count"
 
 void PrintUsage() {
   std::cout << "Usage:\n"
-            << "  tsdb build <input_file> <output_dir> [partition=<seconds>] [format=binary|text]\n"
+            << "  tsdb build <input_file> <output_dir> [partition=<seconds>] "
+               "[format=orc|binary|text]\n"
             << "  tsdb ingest <input_file> <output_dir>\n"
+            << "  tsdb merge <output_dir>\n"
             << "  tsdb query <output_dir> metric=<name> tag=<k=v> tag=<k=v> start=<ts> end=<ts> "
                "fields=min,max,avg,sum,count threads=<n>\n";
 }
@@ -47,6 +49,7 @@ int main(int argc, char** argv) {
     std::string input_path = argv[2];
     std::string output_dir = argv[3];
     tsdb::Builder::BuildOptions options;
+    options.format = tsdb::Builder::PointsFormat::kBinary;
     for (int i = 4; i < argc; ++i) {
       std::string arg = argv[i];
       auto pos = arg.find('=');
@@ -63,16 +66,20 @@ int main(int argc, char** argv) {
           return 1;
         }
       } else if (key == "format") {
-        if (value == "binary") {
-          options.binary_points = true;
+        if (value == "orc") {
+          options.format = tsdb::Builder::PointsFormat::kOrc;
+        } else if (value == "binary") {
+          options.format = tsdb::Builder::PointsFormat::kBinary;
         } else if (value == "text") {
-          options.binary_points = false;
+          options.format = tsdb::Builder::PointsFormat::kText;
         } else {
-          std::cerr << "Invalid format (use binary or text)\n";
+          std::cerr << "Invalid format (use orc, binary, or text)\n";
           return 1;
         }
       } else if (key == "binary") {
-        options.binary_points = (value == "1" || value == "true");
+        options.format = (value == "1" || value == "true")
+                             ? tsdb::Builder::PointsFormat::kBinary
+                             : tsdb::Builder::PointsFormat::kText;
       }
     }
     tsdb::Builder builder;
@@ -98,6 +105,21 @@ int main(int argc, char** argv) {
       return 1;
     }
     std::cout << "Ingest succeeded. Output: " << output_dir << "\n";
+    return 0;
+  }
+
+  if (cmd == "merge") {
+    if (argc < 3) {
+      PrintUsage();
+      return 1;
+    }
+    std::string output_dir = argv[2];
+    std::string err;
+    if (!tsdb::Merge(output_dir, &err)) {
+      std::cerr << "Merge failed: " << err << "\n";
+      return 1;
+    }
+    std::cout << "Merge succeeded. Output: " << output_dir << "\n";
     return 0;
   }
 

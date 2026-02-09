@@ -1,0 +1,13 @@
+# Target labels
+ zlib_ep
+# Source files and their labels
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/zlib_ep
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/zlib_ep.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/zlib_ep-complete.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-build.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-configure.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-download.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-install.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-mkdir.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-patch.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/zlib_ep-prefix/src/zlib_ep-stamp/zlib_ep-update.rule

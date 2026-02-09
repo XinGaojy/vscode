@@ -1,0 +1,14 @@
+# Target labels
+ orc-format_ep
+# Source files and their labels
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/CMakeFiles/orc-format_ep
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/CMakeFiles/orc-format_ep.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/CMakeFiles/orc-format_ep-complete.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-build.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-configure.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-download.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-install.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-mkdir.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-patch.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-test.rule
+/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build_orc/orc/orc-format_ep-prefix/src/orc-format_ep-stamp/orc-format_ep-update.rule

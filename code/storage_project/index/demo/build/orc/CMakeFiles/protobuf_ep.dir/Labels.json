@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/protobuf_ep"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/protobuf_ep.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/CMakeFiles/protobuf_ep-complete.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-build.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-configure.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-download.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-install.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-mkdir.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-patch.rule"
+		},
+		{
+			"file" : "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/protobuf_ep-prefix/src/protobuf_ep-stamp/protobuf_ep-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"protobuf_ep"
+		],
+		"name" : "protobuf_ep"
+	}
+}

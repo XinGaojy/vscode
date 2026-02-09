@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DCMAKE_INSTALL_PREFIX=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/protobuf_ep-install;-DCMAKE_INSTALL_LIBDIR=lib;-DCMAKE_POLICY_VERSION_MINIMUM=3.12;-DBUILD_SHARED_LIBS=OFF;-Dprotobuf_BUILD_TESTS=OFF;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

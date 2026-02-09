@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DCMAKE_INSTALL_PREFIX=/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/zstd_ep-install;-DBUILD_SHARED_LIBS=OFF;-DCMAKE_INSTALL_LIBDIR=lib;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

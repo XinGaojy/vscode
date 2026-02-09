@@ -1,0 +1,13 @@
+[35m[1mConsolidate compiler generated dependencies of target snappy[0m
+[100%] Built target snappy
+[36mInstall the project...[0m
+-- Install configuration: ""
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/lib/libsnappy.a
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/include/snappy-c.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/include/snappy-sinksource.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/include/snappy.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/include/snappy-stubs-public.h
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/lib/cmake/Snappy/SnappyTargets.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/lib/cmake/Snappy/SnappyTargets-noconfig.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/lib/cmake/Snappy/SnappyConfig.cmake
+-- Installing: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/libs/thirdparty/snappy_ep-install/lib/cmake/Snappy/SnappyConfigVersion.cmake

@@ -1,0 +1,46 @@
+[  2%] [32mBuilding C object CMakeFiles/zlib.dir/adler32.c.o[0m
+[  5%] [32mBuilding C object CMakeFiles/zlib.dir/compress.c.o[0m
+[  7%] [32mBuilding C object CMakeFiles/zlib.dir/crc32.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/zlib.dir/deflate.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/zlib.dir/gzclose.c.o[0m
+[ 15%] [32mBuilding C object CMakeFiles/zlib.dir/gzlib.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/zlib.dir/gzread.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/zlib.dir/gzwrite.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/zlib.dir/inflate.c.o[0m
+[ 25%] [32mBuilding C object CMakeFiles/zlib.dir/infback.c.o[0m
+[ 27%] [32mBuilding C object CMakeFiles/zlib.dir/inftrees.c.o[0m
+[ 30%] [32mBuilding C object CMakeFiles/zlib.dir/inffast.c.o[0m
+[ 32%] [32mBuilding C object CMakeFiles/zlib.dir/trees.c.o[0m
+[ 35%] [32mBuilding C object CMakeFiles/zlib.dir/uncompr.c.o[0m
+[ 37%] [32mBuilding C object CMakeFiles/zlib.dir/zutil.c.o[0m
+[ 40%] [32m[1mLinking C shared library libz.so[0m
+[ 40%] Built target zlib
+[ 42%] [32mBuilding C object CMakeFiles/zlibstatic.dir/adler32.c.o[0m
+[ 45%] [32mBuilding C object CMakeFiles/zlibstatic.dir/compress.c.o[0m
+[ 47%] [32mBuilding C object CMakeFiles/zlibstatic.dir/crc32.c.o[0m
+[ 50%] [32mBuilding C object CMakeFiles/zlibstatic.dir/deflate.c.o[0m
+[ 52%] [32mBuilding C object CMakeFiles/zlibstatic.dir/gzclose.c.o[0m
+[ 55%] [32mBuilding C object CMakeFiles/zlibstatic.dir/gzlib.c.o[0m
+[ 57%] [32mBuilding C object CMakeFiles/zlibstatic.dir/gzread.c.o[0m
+[ 60%] [32mBuilding C object CMakeFiles/zlibstatic.dir/gzwrite.c.o[0m
+[ 62%] [32mBuilding C object CMakeFiles/zlibstatic.dir/inflate.c.o[0m
+[ 65%] [32mBuilding C object CMakeFiles/zlibstatic.dir/infback.c.o[0m
+[ 67%] [32mBuilding C object CMakeFiles/zlibstatic.dir/inftrees.c.o[0m
+[ 70%] [32mBuilding C object CMakeFiles/zlibstatic.dir/inffast.c.o[0m
+[ 72%] [32mBuilding C object CMakeFiles/zlibstatic.dir/trees.c.o[0m
+[ 75%] [32mBuilding C object CMakeFiles/zlibstatic.dir/uncompr.c.o[0m
+[ 77%] [32mBuilding C object CMakeFiles/zlibstatic.dir/zutil.c.o[0m
+[ 80%] [32m[1mLinking C static library libz.a[0m
+[ 80%] Built target zlibstatic
+[ 82%] [32mBuilding C object CMakeFiles/example.dir/test/example.c.o[0m
+[ 85%] [32m[1mLinking C executable example[0m
+[ 85%] Built target example
+[ 87%] [32mBuilding C object CMakeFiles/minigzip.dir/test/minigzip.c.o[0m
+[ 90%] [32m[1mLinking C executable minigzip[0m
+[ 90%] Built target minigzip
+[ 92%] [32mBuilding C object CMakeFiles/example64.dir/test/example.c.o[0m
+[ 95%] [32m[1mLinking C executable example64[0m
+[ 95%] Built target example64
+[ 97%] [32mBuilding C object CMakeFiles/minigzip64.dir/test/minigzip.c.o[0m
+[100%] [32m[1mLinking C executable minigzip64[0m
+[100%] Built target minigzip64
