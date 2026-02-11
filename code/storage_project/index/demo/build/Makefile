@@ -85,6 +85,16 @@ package_source:
 package_source/fast: package_source
 .PHONY : package_source/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -182,6 +192,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named tsdb_core
+
+# Build rule for target.
+tsdb_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tsdb_core
+.PHONY : tsdb_core
+
+# fast build rule for target.
+tsdb_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_core.dir/build.make CMakeFiles/tsdb_core.dir/build
+.PHONY : tsdb_core/fast
+
+#=============================================================================
 # Target rules for targets named tsdb
 
 # Build rule for target.
@@ -193,6 +216,45 @@ tsdb: cmake_check_build_system
 tsdb/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb.dir/build.make CMakeFiles/tsdb.dir/build
 .PHONY : tsdb/fast
+
+#=============================================================================
+# Target rules for targets named kronos_core
+
+# Build rule for target.
+kronos_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kronos_core
+.PHONY : kronos_core
+
+# fast build rule for target.
+kronos_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos_core.dir/build.make CMakeFiles/kronos_core.dir/build
+.PHONY : kronos_core/fast
+
+#=============================================================================
+# Target rules for targets named kronos
+
+# Build rule for target.
+kronos: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kronos
+.PHONY : kronos
+
+# fast build rule for target.
+kronos/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos.dir/build.make CMakeFiles/kronos.dir/build
+.PHONY : kronos/fast
+
+#=============================================================================
+# Target rules for targets named tsdb_tests
+
+# Build rule for target.
+tsdb_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tsdb_tests
+.PHONY : tsdb_tests
+
+# fast build rule for target.
+tsdb_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_tests.dir/build.make CMakeFiles/tsdb_tests.dir/build
+.PHONY : tsdb_tests/fast
 
 #=============================================================================
 # Target rules for targets named tsdb_gen
@@ -298,6 +360,54 @@ orc/fast:
 	$(MAKE) $(MAKESILENT) -f orc/c++/src/CMakeFiles/orc.dir/build.make orc/c++/src/CMakeFiles/orc.dir/build
 .PHONY : orc/fast
 
+src/kronos.o: src/kronos.cpp.o
+.PHONY : src/kronos.o
+
+# target to build an object file
+src/kronos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos_core.dir/build.make CMakeFiles/kronos_core.dir/src/kronos.cpp.o
+.PHONY : src/kronos.cpp.o
+
+src/kronos.i: src/kronos.cpp.i
+.PHONY : src/kronos.i
+
+# target to preprocess a source file
+src/kronos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos_core.dir/build.make CMakeFiles/kronos_core.dir/src/kronos.cpp.i
+.PHONY : src/kronos.cpp.i
+
+src/kronos.s: src/kronos.cpp.s
+.PHONY : src/kronos.s
+
+# target to generate assembly for a file
+src/kronos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos_core.dir/build.make CMakeFiles/kronos_core.dir/src/kronos.cpp.s
+.PHONY : src/kronos.cpp.s
+
+src/kronos_main.o: src/kronos_main.cpp.o
+.PHONY : src/kronos_main.o
+
+# target to build an object file
+src/kronos_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos.dir/build.make CMakeFiles/kronos.dir/src/kronos_main.cpp.o
+.PHONY : src/kronos_main.cpp.o
+
+src/kronos_main.i: src/kronos_main.cpp.i
+.PHONY : src/kronos_main.i
+
+# target to preprocess a source file
+src/kronos_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos.dir/build.make CMakeFiles/kronos.dir/src/kronos_main.cpp.i
+.PHONY : src/kronos_main.cpp.i
+
+src/kronos_main.s: src/kronos_main.cpp.s
+.PHONY : src/kronos_main.s
+
+# target to generate assembly for a file
+src/kronos_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kronos.dir/build.make CMakeFiles/kronos.dir/src/kronos_main.cpp.s
+.PHONY : src/kronos_main.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -327,7 +437,7 @@ src/tsdb.o: src/tsdb.cpp.o
 
 # target to build an object file
 src/tsdb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb.dir/build.make CMakeFiles/tsdb.dir/src/tsdb.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_core.dir/build.make CMakeFiles/tsdb_core.dir/src/tsdb.cpp.o
 .PHONY : src/tsdb.cpp.o
 
 src/tsdb.i: src/tsdb.cpp.i
@@ -335,7 +445,7 @@ src/tsdb.i: src/tsdb.cpp.i
 
 # target to preprocess a source file
 src/tsdb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb.dir/build.make CMakeFiles/tsdb.dir/src/tsdb.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_core.dir/build.make CMakeFiles/tsdb_core.dir/src/tsdb.cpp.i
 .PHONY : src/tsdb.cpp.i
 
 src/tsdb.s: src/tsdb.cpp.s
@@ -343,8 +453,32 @@ src/tsdb.s: src/tsdb.cpp.s
 
 # target to generate assembly for a file
 src/tsdb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb.dir/build.make CMakeFiles/tsdb.dir/src/tsdb.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_core.dir/build.make CMakeFiles/tsdb_core.dir/src/tsdb.cpp.s
 .PHONY : src/tsdb.cpp.s
+
+tests/tsdb_tests.o: tests/tsdb_tests.cpp.o
+.PHONY : tests/tsdb_tests.o
+
+# target to build an object file
+tests/tsdb_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_tests.dir/build.make CMakeFiles/tsdb_tests.dir/tests/tsdb_tests.cpp.o
+.PHONY : tests/tsdb_tests.cpp.o
+
+tests/tsdb_tests.i: tests/tsdb_tests.cpp.i
+.PHONY : tests/tsdb_tests.i
+
+# target to preprocess a source file
+tests/tsdb_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_tests.dir/build.make CMakeFiles/tsdb_tests.dir/tests/tsdb_tests.cpp.i
+.PHONY : tests/tsdb_tests.cpp.i
+
+tests/tsdb_tests.s: tests/tsdb_tests.cpp.s
+.PHONY : tests/tsdb_tests.s
+
+# target to generate assembly for a file
+tests/tsdb_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tsdb_tests.dir/build.make CMakeFiles/tsdb_tests.dir/tests/tsdb_tests.cpp.s
+.PHONY : tests/tsdb_tests.cpp.s
 
 tools/generate_data.o: tools/generate_data.cpp.o
 .PHONY : tools/generate_data.o
@@ -384,21 +518,35 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... lz4_ep"
 	@echo "... orc-format_ep"
 	@echo "... protobuf_ep"
 	@echo "... snappy_ep"
 	@echo "... zlib_ep"
 	@echo "... zstd_ep"
+	@echo "... kronos"
+	@echo "... kronos_core"
 	@echo "... orc"
 	@echo "... tsdb"
+	@echo "... tsdb_core"
 	@echo "... tsdb_gen"
+	@echo "... tsdb_tests"
+	@echo "... src/kronos.o"
+	@echo "... src/kronos.i"
+	@echo "... src/kronos.s"
+	@echo "... src/kronos_main.o"
+	@echo "... src/kronos_main.i"
+	@echo "... src/kronos_main.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/tsdb.o"
 	@echo "... src/tsdb.i"
 	@echo "... src/tsdb.s"
+	@echo "... tests/tsdb_tests.o"
+	@echo "... tests/tsdb_tests.i"
+	@echo "... tests/tsdb_tests.s"
 	@echo "... tools/generate_data.o"
 	@echo "... tools/generate_data.i"
 	@echo "... tools/generate_data.s"

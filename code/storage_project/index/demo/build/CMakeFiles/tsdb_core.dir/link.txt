@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtsdb_core.a CMakeFiles/tsdb_core.dir/src/tsdb.cpp.o
+/usr/bin/ranlib libtsdb_core.a

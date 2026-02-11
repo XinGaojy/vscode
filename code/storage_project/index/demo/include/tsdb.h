@@ -1,8 +1,9 @@
 #pragma once
 
 #include <array>
-#include <cstdint>
 #include <atomic>
+#include <cstddef>
+#include <cstdint>
 #include <mutex>
 #include <string>
 #include <unordered_map>
@@ -11,9 +12,14 @@
 
 namespace tsdb {
 
+struct FieldValue {
+  std::string name;
+  double value = 0.0;
+};
+
 struct Point {
   int64_t timestamp = 0;
-  std::array<double, 5> values{};
+  std::vector<FieldValue> fields;
 };
 
 struct Range {
@@ -45,6 +51,8 @@ class Builder {
     int64_t partition_seconds = 3600;
     PointsFormat format = PointsFormat::kBinary;
     std::vector<int64_t> rollup_seconds;
+    int64_t tier_hot_seconds = 43200;
+    int64_t tier_warm_seconds = 259200;
   };
 
   bool Build(const std::string& input_path,
@@ -67,6 +75,7 @@ class DB {
   struct DictEntry {
     int64_t offset = 0;
     int64_t length = 0;
+    bool complement = false;
   };
 
   struct Partition {
@@ -81,11 +90,14 @@ class DB {
   std::string dir_;
   std::vector<std::string> series_keys_;
   std::unordered_map<uint64_t, DictEntry> dict_;
+  std::unordered_map<uint64_t, DictEntry> dict_delta_;
   std::unordered_map<int64_t, Partition> partitions_;
   int64_t partition_seconds_ = 3600;
   Builder::PointsFormat format_ = Builder::PointsFormat::kBinary;
   std::vector<int64_t> partition_buckets_;
   std::string postings_path_;
+  std::string postings_delta_path_;
+  size_t postings_series_count_ = 0;
   std::unordered_map<int64_t, std::string> tier_by_bucket_;
 
   mutable std::unordered_map<std::string, std::vector<int>> posting_cache_;

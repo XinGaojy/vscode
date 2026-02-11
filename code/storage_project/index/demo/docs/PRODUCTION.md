@@ -24,6 +24,8 @@ operational controls, and scalability patterns needed for very large workloads.
   - forward_index.txt: series id -> row ranges
   - points.orc (or points.bin/points.txt for debug)
   - deltas.txt + points_delta_*.orc (ORC ingest deltas, compacted by merge)
+  - tiers.txt (bucket -> hot/warm/cold metadata)
+  - rollup_<sec>/ (down-sampled tiers, optional)
 
 ## Ingest Pipeline (Production)
 1) Write path
@@ -79,9 +81,16 @@ operational controls, and scalability patterns needed for very large workloads.
 - Time partitioned storage
 - Optional ORC points format
 - ORC delta ingest + merge compaction
+- Rollup (down-sample) directories
+- Tier metadata filtering at query time
+- WAL + crash replay (per shard)
+- Incremental postings delta + compaction
+- Local "Kronos" lambda-architecture demo:
+  - File-based MQ ingestion
+  - Online shard indexing
+  - Offline build to Pangu-like storage
 
 ## What Remains for a Full Production System
-- WAL + crash recovery
 - Distributed sharding/replication
 - Compaction scheduler
 - Tiered storage & rollups

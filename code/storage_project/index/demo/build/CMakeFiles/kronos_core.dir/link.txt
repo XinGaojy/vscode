@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkronos_core.a CMakeFiles/kronos_core.dir/src/kronos.cpp.o
+/usr/bin/ranlib libkronos_core.a

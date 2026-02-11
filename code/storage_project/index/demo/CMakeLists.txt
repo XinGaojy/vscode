@@ -6,13 +6,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Threads REQUIRED)
 
-add_executable(tsdb
-  src/main.cpp
+add_library(tsdb_core
   src/tsdb.cpp
 )
-
-target_include_directories(tsdb PRIVATE include)
-target_link_libraries(tsdb PRIVATE Threads::Threads)
+target_include_directories(tsdb_core PUBLIC include)
+target_link_libraries(tsdb_core PUBLIC Threads::Threads)
 
 option(TSDB_ENABLE_ORC "Enable ORC points format support" OFF)
 option(TSDB_USE_BUNDLED_ORC "Use bundled ORC source under third_party/orc" OFF)
@@ -37,18 +35,42 @@ if(TSDB_ENABLE_ORC)
     set(ENABLE_ASAN OFF CACHE BOOL "" FORCE)
     set(ENABLE_UBSAN OFF CACHE BOOL "" FORCE)
     add_subdirectory(${ORC_SOURCE_DIR} ${CMAKE_BINARY_DIR}/orc)
-    target_link_libraries(tsdb PRIVATE orc)
+    target_link_libraries(tsdb_core PUBLIC orc)
   else()
     find_path(ORC_INCLUDE_DIR orc/OrcFile.hh)
     find_library(ORC_LIBRARY NAMES orc)
     if(NOT ORC_INCLUDE_DIR OR NOT ORC_LIBRARY)
       message(FATAL_ERROR "Apache ORC C++ headers/libs not found. Set ORC_INCLUDE_DIR/ORC_LIBRARY or enable bundled ORC.")
     endif()
-    target_include_directories(tsdb PRIVATE ${ORC_INCLUDE_DIR})
-    target_link_libraries(tsdb PRIVATE ${ORC_LIBRARY})
+    target_include_directories(tsdb_core PUBLIC ${ORC_INCLUDE_DIR})
+    target_link_libraries(tsdb_core PUBLIC ${ORC_LIBRARY})
   endif()
-  target_compile_definitions(tsdb PRIVATE TSDB_ENABLE_ORC=1)
+  target_compile_definitions(tsdb_core PUBLIC TSDB_ENABLE_ORC=1)
 endif()
+
+add_executable(tsdb
+  src/main.cpp
+)
+target_link_libraries(tsdb PRIVATE tsdb_core)
+
+add_library(kronos_core
+  src/kronos.cpp
+)
+target_include_directories(kronos_core PUBLIC include)
+target_link_libraries(kronos_core PUBLIC tsdb_core)
+
+add_executable(kronos
+  src/kronos_main.cpp
+)
+target_link_libraries(kronos PRIVATE kronos_core)
+
+add_executable(tsdb_tests
+  tests/tsdb_tests.cpp
+)
+target_link_libraries(tsdb_tests PRIVATE kronos_core)
+
+enable_testing()
+add_test(NAME tsdb_tests COMMAND tsdb_tests)
 
 add_executable(tsdb_gen
   tools/generate_data.cpp

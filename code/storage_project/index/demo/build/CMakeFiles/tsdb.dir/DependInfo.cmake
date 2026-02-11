@@ -9,11 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/src/main.cpp" "CMakeFiles/tsdb.dir/src/main.cpp.o" "gcc" "CMakeFiles/tsdb.dir/src/main.cpp.o.d"
-  "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/src/tsdb.cpp" "CMakeFiles/tsdb.dir/src/tsdb.cpp.o" "gcc" "CMakeFiles/tsdb.dir/src/tsdb.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/CMakeFiles/tsdb_core.dir/DependInfo.cmake"
   "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/orc/c++/src/CMakeFiles/orc.dir/DependInfo.cmake"
   )
 

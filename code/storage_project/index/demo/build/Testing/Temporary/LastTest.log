@@ -1,0 +1,19 @@
+Start testing: Feb 09 22:55 CST
+----------------------------------------------------------
+1/1 Testing: tsdb_tests
+1/1 Test: tsdb_tests
+Command: "/workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build/tsdb_tests"
+Directory: /workspace/linux/clang-quickstart/vscode/code/storage_project/index/demo/build
+"tsdb_tests" start time: Feb 09 22:55 CST
+Output:
+----------------------------------------------------------
+All tests passed
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"tsdb_tests" end time: Feb 09 22:55 CST
+"tsdb_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 09 22:55 CST

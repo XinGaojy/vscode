@@ -1,4 +1,3 @@
 0|cpu|domain=beijing|host=10.0.0.1|zone=x
 1|mem|domain=beijing|host=10.0.0.1|zone=y
 2|mem|domain=shanghai|host=10.0.0.2|zone=y
-3|cpu|domain=beijing11|host=10.0.0.8|zone=z

@@ -1,2 +1,2 @@
 partition_seconds 3600
-points_format orc
+points_format text
